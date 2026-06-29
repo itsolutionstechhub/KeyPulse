@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Online Keyboard & Mouse Latency Tester</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Premium online keyboard and mouse latency diagnostic tool. Test key response times, N-Key Rollover (NKRO), and mechanical switches on Apple MacBook, Dell XPS, HP Spectre, Lenovo ThinkPad, Asus ROG, Acer Predator, and MSI. Supports English, Spanish (Español), German (Deutsch), French (Français), and Portuguese (Português).">
+    <meta name="keywords" content="keyboard tester, online keyboard test, key test, mouse tester, latency test, NKRO test, mechanical keyboard sound, virtual keyboard, apple, dell, hp, lenovo, asus, acer, msi">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-neon-dark">
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="brand-wrapper">
+                <div class="brand">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                            <line x1="6" y1="8" x2="6.01" y2="8"></line>
+                            <line x1="10" y1="8" x2="10.01" y2="8"></line>
+                            <line x1="14" y1="8" x2="14.01" y2="8"></line>
+                            <line x1="18" y1="8" x2="18.01" y2="8"></line>
+                            <line x1="6" y1="12" x2="6.01" y2="12"></line>
+                            <line x1="10" y1="12" x2="10.01" y2="12"></line>
+                            <line x1="14" y1="12" x2="14.01" y2="12"></line>
+                            <line x1="18" y1="12" x2="18.01" y2="12"></line>
+                            <line x1="7" y1="16" x2="17" y2="16"></line>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>KeyPulse</h1>
+                        <span id="logo-tagline">Smart Diagnostic Console</span>
+                    </div>
+                </div>
+                <nav class="header-nav">
+                    <a href="#" id="link-about-header" class="header-link">About</a>
+                    <a href="#" id="link-privacy-header" class="header-link">Privacy</a>
+                    <a href="#" id="link-contact-header" class="header-link">Contact</a>
+                </nav>
+            </div>
+            
+            <!-- Real-time Stats Panel -->
+            <div class="stats-panel">
+                <div class="stat-box" id="stat-active-keys">
+                    <span class="stat-value">0</span>
+                    <span class="stat-label">Active Keys</span>
+                </div>
+                <div class="stat-box" id="stat-nkro">
+                    <span class="stat-value">0</span>
+                    <span class="stat-label">Max Rollover</span>
+                </div>
+                <div class="stat-box" id="stat-last-latency">
+                    <span class="stat-value">0<span class="unit">ms</span></span>
+                    <span class="stat-label">Key Latency</span>
+                </div>
+                <div class="stat-box" id="stat-total-tested">
+                    <span class="stat-value">0</span>
+                    <span class="stat-label">Tested Keys</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Controls Dashboard -->
+        <section class="controls-dashboard">
+            <!-- Layout & OS Selection -->
+            <div class="control-group">
+                <label id="lbl-layout" for="layout-select">Keyboard Layout</label>
+                <div class="select-wrapper">
+                    <select id="layout-select">
+                        <option value="layout-100">Full Size (100%)</option>
+                        <option value="layout-80" selected>Tenkeyless (80%)</option>
+                        <option value="layout-75">Compact (75%)</option>
+                        <option value="layout-60">Mini (60%)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label id="lbl-os" for="os-select">OS Mapping</label>
+                <div class="select-wrapper">
+                    <select id="os-select">
+                        <option value="win">Windows / Linux</option>
+                        <option value="mac">macOS</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Switch Sound Selector -->
+            <div class="control-group">
+                <label id="lbl-sound" for="sound-select">Switch Audio Simulator</label>
+                <div class="select-wrapper">
+                    <select id="sound-select">
+                        <option value="blue">Cherry MX Blue (Clicky)</option>
+                        <option value="brown">Cherry MX Brown (Tactile)</option>
+                        <option value="red" selected>Cherry MX Red (Linear)</option>
+                        <option value="mute">Mute</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Theme Selector -->
+            <div class="control-group">
+                <label id="lbl-theme" for="theme-select">Interface Theme</label>
+                <div class="select-wrapper">
+                    <select id="theme-select">
+                        <option value="theme-neon-dark" selected>Neon Dark</option>
+                        <option value="theme-cyberpunk">Cyberpunk</option>
+                        <option value="theme-slate-dark">Slate Dark</option>
+                        <option value="theme-glass-light">Glass Light</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Language Selector -->
+            <div class="control-group">
+                <label id="lbl-lang" for="lang-select">Language / Idioma</label>
+                <div class="select-wrapper">
+                    <select id="lang-select">
+                        <option value="en" selected>English</option>
+                        <option value="es">Español</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                        <option value="pt">Português</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Reset Actions -->
+            <div class="action-buttons">
+                <button id="btn-reset" class="btn-primary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                    </svg>
+                    <span id="btn-reset-text">Reset Board</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Main Workspace (Keyboard + Side Event Log) -->
+        <main class="main-workspace">
+            <!-- Left Panel: Keyboard and Info -->
+            <div class="workspace-left">
+                <!-- Keyboard Container -->
+                <div class="keyboard-viewport">
+                    <div id="virtual-keyboard" class="keyboard-grid">
+                        <!-- Key Elements will be injected dynamically via script.js -->
+                    </div>
+                </div>
+
+                <!-- Keyboard Legend / Guidelines -->
+                <div class="keyboard-legend" id="keyboard-legend-block">
+                    <!-- Legend text will be updated dynamically via script.js -->
+                </div>
+            </div>
+
+            <!-- Right Panel: Mouse Diagnostics & Live Logs -->
+            <div class="workspace-right">
+                <!-- Mouse Tester Box -->
+                <div class="info-card mouse-tester-card">
+                    <h3 id="mouse-tester-title">Mouse Diagnostics</h3>
+                    <div class="mouse-tester-content">
+                        <!-- SVG Mouse representation -->
+                        <div class="mouse-svg-container">
+                            <svg id="mouse-graphic" viewBox="0 0 100 160" width="85" height="136">
+                                <!-- Mouse Body Outline -->
+                                <path class="mouse-body" d="M10 60 C10 10, 90 10, 90 60 L90 110 C90 145, 10 145, 10 110 Z" fill="none" stroke="currentColor" stroke-width="4"></path>
+                                <!-- Left Button -->
+                                <path id="mouse-btn-left" class="mouse-part" d="M10 60 C10 10, 50 10, 50 60 L50 65 L10 65 Z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                                <!-- Right Button -->
+                                <path id="mouse-btn-right" class="mouse-part" d="M90 60 C90 10, 50 10, 50 60 L50 65 L90 65 Z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                                <!-- Scroll Wheel -->
+                                <rect id="mouse-btn-middle" class="mouse-part" x="46" y="25" width="8" height="22" rx="4" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                                <!-- Scroll Up/Down Indicators -->
+                                <path id="scroll-up-arrow" class="scroll-arrow" d="M50 18 L46 22 M50 18 L54 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.15"></path>
+                                <path id="scroll-down-arrow" class="scroll-arrow" d="M50 53 L46 49 M50 53 L54 49" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.15"></path>
+                            </svg>
+                        </div>
+                        <div class="mouse-stats">
+                            <div class="mouse-stat-row">
+                                <span id="lbl-mouse-coords" class="mouse-stat-label">Coordinates:</span>
+                                <span id="mouse-coords" class="mouse-stat-val">X: 0, Y: 0</span>
+                            </div>
+                            <div class="mouse-stat-row">
+                                <span id="lbl-mouse-clicks" class="mouse-stat-label">Clicks:</span>
+                                <span id="mouse-click-count" class="mouse-stat-val">L: 0 | R: 0 | M: 0</span>
+                            </div>
+                            <div class="mouse-stat-row">
+                                <span id="lbl-mouse-double" class="mouse-stat-label">Double Click:</span>
+                                <span id="mouse-double-click" class="mouse-stat-val">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Last Pressed Key Event Card -->
+                <div class="info-card event-details-card">
+                    <h3 id="key-registry-title">Active Key Registry</h3>
+                    <div class="event-details-grid">
+                        <div class="event-property">
+                            <span id="lbl-reg-key" class="property-name">Key (Char)</span>
+                            <span id="event-val-key" class="property-value font-mono">--</span>
+                        </div>
+                        <div class="event-property">
+                            <span id="lbl-reg-code" class="property-name">Code</span>
+                            <span id="event-val-code" class="property-value font-mono">--</span>
+                        </div>
+                        <div class="event-property">
+                            <span id="lbl-reg-keycode" class="property-name">KeyCode (e.which)</span>
+                            <span id="event-val-keycode" class="property-value font-mono">--</span>
+                        </div>
+                        <div class="event-property">
+                            <span id="lbl-reg-location" class="property-name">Location</span>
+                            <span id="event-val-location" class="property-value font-mono">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Lower Section: Detailed Event History Table -->
+        <section class="history-section">
+            <div class="history-header">
+                <h2 id="history-section-title">Diagnostic Event Logger</h2>
+                <div class="history-actions">
+                    <button id="btn-export" class="btn-secondary">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
+                        </svg>
+                        <span id="btn-export-text">Export CSV</span>
+                    </button>
+                    <button id="btn-clear-log" class="btn-danger">Clear Log</button>
+                </div>
+            </div>
+            <div class="history-table-wrapper">
+                <table id="history-table">
+                    <thead>
+                        <tr id="history-table-headers">
+                            <!-- Headers will be translated dynamically in script.js -->
+                        </tr>
+                    </thead>
+                    <tbody id="history-log-body">
+                        <!-- History logs injected dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SEO Informative Article Section -->
+        <section class="history-section" id="seo-article">
+            <!-- Article content will be injected dynamically based on language in script.js -->
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-links">
+                <a href="#" id="link-about" class="footer-link">About Us</a>
+                <a href="#" id="link-privacy" class="footer-link">Privacy Policy</a>
+                <a href="#" id="link-contact" class="footer-link">Contact Us</a>
+            </div>
+            <p id="footer-desc">KeyPulse &bull; Premium Hardware Tester &bull; Developed by <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; Zero-latency diagnostics.</p>
+        </footer>
+    </div>
+
+    <!-- Glassmorphic Modal Dialog -->
+    <div id="modal-container" class="modal-overlay">
+        <div class="modal-card">
+            <button id="modal-close" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div id="modal-content-area" class="modal-body">
+                <!-- Injected dynamically via script.js -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
