@@ -25,6 +25,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Client-side Inappropriate Ad Filter -->
+    <script>
+      (function() {
+        const AD_KEYWORDS = ['sexy', 'xxx', 'sex', 'porn', 'adult', 'dating', 'girl', 'vixen', 'secret video', 'secret videos'];
+        const adObserver = new MutationObserver((mutations) => {
+          for (const mutation of mutations) {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                const textContent = (node.textContent || '').toLowerCase();
+                const hasAdult = AD_KEYWORDS.some(kw => textContent.includes(kw));
+                if (hasAdult) {
+                  node.style.display = 'none';
+                  node.remove();
+                }
+              }
+            }
+          }
+        });
+        adObserver.observe(document.documentElement, { childList: true, subtree: true });
+      })();
+    </script>
     <!-- Monetag MultiTag Ads -->
     <script src="https://quge5.com/88/tag.min.js" data-zone="254596" async data-cfasync="false"></script>
 </head>
