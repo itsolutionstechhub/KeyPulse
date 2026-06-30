@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyPulse Hardware Diagnostics Blog & Guides</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+    <!-- Meta tags for SEO -->
+    <meta name="monetag" content="cfb12011065fa4e7236db03fa3cd690c">
+    <meta name="google-site-verification" content="vofhFxDAIj9Q2VNXKJgiv6-A5TOReD46r1HDH79yFSU" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2H5J7RQELY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2H5J7RQELY');
+    </script>
+    <meta name="description" content="Read expert troubleshooting guides, keyboard maintenance tips, and hardware diagnostics articles to optimize your gaming and typing performance.">
+    <meta name="keywords" content="keyboard repair, fix double click, laptop keyboard backlight, keyboard guide, hardware maintenance, keypulse blog">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Client-side Inappropriate Ad Filter -->
+    <script>
+      (function() {
+        const AD_KEYWORDS = ['sexy', 'xxx', 'sex', 'porn', 'adult', 'dating', 'girl', 'vixen', 'secret video', 'secret videos'];
+        setInterval(() => {
+          const allElements = document.getElementsByTagName('*');
+          for (let i = 0; i < allElements.length; i++) {
+            const el = allElements[i];
+            const tag = el.tagName.toLowerCase();
+            if (['html', 'body', 'script', 'style', 'head', 'link'].includes(tag)) continue;
+            
+            const text = (el.textContent || '');
+            const hasAdult = AD_KEYWORDS.some(kw => text.toLowerCase().includes(kw));
+            if (hasAdult && !el.closest('.app-container')) {
+              let container = el;
+              while (container.parentElement && 
+                     container.parentElement.tagName.toLowerCase() !== 'body') {
+                container = container.parentElement;
+              }
+              console.log('Removed inappropriate ad container:', container);
+              container.remove();
+            }
+          }
+        }, 100);
+      })();
+    </script>
+    <!-- Monetag MultiTag Ads -->
+    <script src="https://quge5.com/88/tag.min.js" data-zone="254596" async data-cfasync="false"></script>
+    
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .blog-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.08);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .blog-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .blog-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            transition: color 0.2s ease;
+        }
+        .blog-card:hover .blog-title {
+            color: var(--neon-cyan);
+        }
+        .blog-excerpt {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--neon-cyan);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        .blog-link svg {
+            transition: transform 0.2s ease;
+        }
+        .blog-card:hover .blog-link svg {
+            transform: translateX(4px);
+        }
+        .blog-header-section {
+            text-align: center;
+            padding: 40px 0 20px 0;
+        }
+        .blog-header-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        .blog-header-section p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="theme-neon-dark">
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="brand-wrapper">
+                <div class="brand">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                            <line x1="6" y1="8" x2="6.01" y2="8"></line>
+                            <line x1="10" y1="8" x2="10.01" y2="8"></line>
+                            <line x1="14" y1="8" x2="14.01" y2="8"></line>
+                            <line x1="18" y1="8" x2="18.01" y2="8"></line>
+                            <line x1="6" y1="12" x2="6.01" y2="12"></line>
+                            <line x1="10" y1="12" x2="10.01" y2="12"></line>
+                            <line x1="14" y1="12" x2="14.01" y2="12"></line>
+                            <line x1="18" y1="12" x2="18.01" y2="12"></line>
+                            <line x1="7" y1="16" x2="17" y2="16"></line>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>KeyPulse</h1>
+                        <span id="logo-tagline">Smart Diagnostic Console</span>
+                    </div>
+                </div>
+                <nav class="header-nav">
+                    <a href="index.html" class="header-link">Keyboard</a>
+                    <a href="cps-tester.html" class="header-link">CPS Tester</a>
+                    <a href="blog.html" class="header-link active">Blog</a>
+                    <a href="#" id="link-about-header" class="header-link">About</a>
+                    <a href="#" id="link-privacy-header" class="header-link">Privacy</a>
+                    <a href="#" id="link-contact-header" class="header-link">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Blog Header -->
+        <div class="blog-header-section">
+            <h2>Hardware Knowledge Base</h2>
+            <p>Expert diagnostic guides, troubleshooting tricks, and maintenance manuals written to help you optimize and repair your gaming setup.</p>
+        </div>
+
+        <!-- Main Workspace: Blog Grid -->
+        <main style="padding: 20px 0 60px 0;">
+            <div class="blog-grid">
+                <!-- Blog Card 1 -->
+                <article class="blog-card">
+                    <div>
+                        <div class="blog-meta">
+                            <span>June 30, 2026</span>
+                            <span>&bull;</span>
+                            <span>5 Min Read</span>
+                        </div>
+                        <h3 class="blog-title">How to Fix Keyboard Double Clicking (Mechanical & Membrane)</h3>
+                        <p class="blog-excerpt">Is your keyboard registering multiple keystrokes or chatter when you press a key once? Discover step-by-step diagnostic fixes for switches, software settings, and hardware cleaning.</p>
+                    </div>
+                    <a href="how-to-fix-keyboard-double-clicking.html" class="blog-link">
+                        Read Guide
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="blog-card">
+                    <div>
+                        <div class="blog-meta">
+                            <span>June 30, 2026</span>
+                            <span>&bull;</span>
+                            <span>6 Min Read</span>
+                        </div>
+                        <h3 class="blog-title">How to Turn On Keyboard Light on Laptop (Asus, HP, Dell, Lenovo, Acer)</h3>
+                        <p class="blog-excerpt">Struggling to find the backlight keyboard shortcuts for your laptop? Learn how to enable and adjust keyboard backlight lights on Asus Vivobook, HP Pavilion, Dell, Lenovo, and Acer laptops.</p>
+                    </div>
+                    <a href="how-to-turn-on-keyboard-light-on-laptop.html" class="blog-link">
+                        Read Guide
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </article>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-links">
+                <a href="#" id="link-about" class="footer-link">About Us</a>
+                <a href="#" id="link-privacy" class="footer-link">Privacy Policy</a>
+                <a href="#" id="link-contact" class="footer-link">Contact Us</a>
+            </div>
+            <p>KeyPulse &bull; Diagnostic Blog &bull; Developed by <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; All guides verified.</p>
+        </footer>
+    </div>
+
+    <!-- Glassmorphic Modal Dialog -->
+    <div id="modal-container" class="modal-overlay">
+        <div class="modal-card">
+            <button id="modal-close" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div id="modal-content-area" class="modal-body">
+                <!-- Modal content will be dynamically set -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modals management
+        const modalContainer = document.getElementById('modal-container');
+        const modalContentArea = document.getElementById('modal-content-area');
+        const modalClose = document.getElementById('modal-close');
+
+        const modalContents = {
+            about: `<h2>About KeyPulse</h2>
+                    <p>KeyPulse is a high-performance diagnostic suite built for hardware enthusiasts, gamers, and programmers. We leverage cutting-edge browser technologies to offer zero-latency testing, precision input diagnostics, and real-time statistics reporting.</p>
+                    <p>Developed by the team at <a href="https://www.youtube.com/@itsolutionspro" target="_blank" style="color:var(--neon-cyan)">IT Solutions Pro</a>.</p>`,
+            privacy: `<h2>Privacy Policy</h2>
+                      <p>Your privacy is absolute. KeyPulse runs entirely inside your browser (Client-Side). We do not transmit, collect, or store any of your keystrokes, mouse click details, or hardware diagnostic data on any server.</p>
+                      <p>Standard analytics tags are used solely for monitoring aggregate traffic quantities and improving user experience.</p>`,
+            contact: `<h2>Contact Us</h2>
+                      <p>Have suggestions, bug reports, or partnership opportunities? Reach out to us directly via our YouTube channel page or drop an email to: <a href="mailto:itsolutionstechhub@gmail.com" style="color:var(--neon-cyan)">itsolutionstechhub@gmail.com</a>.</p>`
+        };
+
+        function showModal(type) {
+            modalContentArea.innerHTML = modalContents[type] || '';
+            modalContainer.classList.add('active');
+        }
+
+        function closeModal() {
+            modalContainer.classList.remove('active');
+        }
+
+        // Attach event listeners for nav links
+        document.querySelectorAll('#link-about, #link-about-header').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showModal('about'); }));
+        document.querySelectorAll('#link-privacy, #link-privacy-header').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showModal('privacy'); }));
+        document.querySelectorAll('#link-contact, #link-contact-header').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showModal('contact'); }));
+        modalClose.addEventListener('click', closeModal);
+        modalContainer.addEventListener('click', (e) => { if (e.target === modalContainer) closeModal(); });
+    </script>
+</body>
+</html>

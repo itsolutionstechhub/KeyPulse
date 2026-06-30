@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Online Mouse CPS Click Speed Tester - KeyPulse</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+    <!-- Meta tags for SEO -->
+    <meta name="monetag" content="cfb12011065fa4e7236db03fa3cd690c">
+    <meta name="google-site-verification" content="vofhFxDAIj9Q2VNXKJgiv6-A5TOReD46r1HDH79yFSU" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2H5J7RQELY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2H5J7RQELY');
+    </script>
+    <meta name="description" content="Test your mouse clicks per second (CPS) with the ultimate premium click speed tester. Improve gaming reflexes, PVP clicking speed, and diagnostic input latency. Supports custom duration timers, real-time logging, sound effects, and global rank awards.">
+    <meta name="keywords" content="cps tester, click speed test, click tester, clicks per second, mouse latency, pvp clicker, minecraft clicks, double click test">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Client-side Inappropriate Ad Filter -->
+    <script>
+      (function() {
+        const AD_KEYWORDS = ['sexy', 'xxx', 'sex', 'porn', 'adult', 'dating', 'girl', 'vixen', 'secret video', 'secret videos'];
+        setInterval(() => {
+          const allElements = document.getElementsByTagName('*');
+          for (let i = 0; i < allElements.length; i++) {
+            const el = allElements[i];
+            const tag = el.tagName.toLowerCase();
+            if (['html', 'body', 'script', 'style', 'head', 'link'].includes(tag)) continue;
+            
+            const text = (el.textContent || '');
+            const hasAdult = AD_KEYWORDS.some(kw => text.toLowerCase().includes(kw));
+            if (hasAdult && !el.closest('.app-container')) {
+              let container = el;
+              while (container.parentElement && 
+                     container.parentElement.tagName.toLowerCase() !== 'body') {
+                container = container.parentElement;
+              }
+              console.log('Removed inappropriate ad container:', container);
+              container.remove();
+            }
+          }
+        }, 100);
+      })();
+    </script>
+    <!-- Monetag MultiTag Ads -->
+    <script src="https://quge5.com/88/tag.min.js" data-zone="254596" async data-cfasync="false"></script>
+    
+    <style>
+        .cps-click-pad {
+            width: 100%;
+            height: 280px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px dashed var(--neon-cyan);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.05);
+            user-select: none;
+            margin-top: 15px;
+        }
+        .cps-click-pad:hover {
+            background: rgba(0, 240, 255, 0.05);
+            border-style: solid;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1), inset 0 0 15px rgba(0, 240, 255, 0.1);
+        }
+        .cps-click-pad:active {
+            background: rgba(0, 240, 255, 0.1);
+            transform: scale(0.99);
+        }
+        .cps-click-prompt {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            pointer-events: none;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+            margin-bottom: 5px;
+        }
+        .cps-click-subprompt {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+            pointer-events: none;
+        }
+        .cps-rank-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--neon-cyan);
+            font-size: 14px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+        }
+        .cps-time-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .cps-time-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .cps-time-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .cps-time-btn.active {
+            background: var(--neon-cyan);
+            border-color: var(--neon-cyan);
+            color: #0d0e15;
+            font-weight: 600;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+        .ripple {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 240, 255, 0.4);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: scale(0);
+            animation: ripple-effect 0.4s linear;
+        }
+        @keyframes ripple-effect {
+            to {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="theme-neon-dark">
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="brand-wrapper">
+                <div class="brand">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                            <line x1="6" y1="8" x2="6.01" y2="8"></line>
+                            <line x1="10" y1="8" x2="10.01" y2="8"></line>
+                            <line x1="14" y1="8" x2="14.01" y2="8"></line>
+                            <line x1="18" y1="8" x2="18.01" y2="8"></line>
+                            <line x1="6" y1="12" x2="6.01" y2="12"></line>
+                            <line x1="10" y1="12" x2="10.01" y2="12"></line>
+                            <line x1="14" y1="12" x2="14.01" y2="12"></line>
+                            <line x1="18" y1="12" x2="18.01" y2="12"></line>
+                            <line x1="7" y1="16" x2="17" y2="16"></line>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>KeyPulse</h1>
+                        <span id="logo-tagline">Smart Diagnostic Console</span>
+                    </div>
+                </div>
+                <nav class="header-nav">
+                    <a href="index.html" class="header-link">Keyboard</a>
+                    <a href="cps-tester.html" class="header-link active">CPS Tester</a>
+                    <a href="blog.html" class="header-link">Blog</a>
+                    <a href="#" id="link-about-header" class="header-link">About</a>
+                    <a href="#" id="link-privacy-header" class="header-link">Privacy</a>
+                    <a href="#" id="link-contact-header" class="header-link">Contact</a>
+                </nav>
+            </div>
+            
+            <!-- Real-time Stats Panel -->
+            <div class="stats-panel">
+                <div class="stat-box" id="stat-clicks">
+                    <span class="stat-value" id="val-clicks">0</span>
+                    <span class="stat-label">Total Clicks</span>
+                </div>
+                <div class="stat-box" id="stat-time">
+                    <span class="stat-value" id="val-time">5.0<span class="unit">s</span></span>
+                    <span class="stat-label">Time Remaining</span>
+                </div>
+                <div class="stat-box" id="stat-cps">
+                    <span class="stat-value" id="val-cps">0.0</span>
+                    <span class="stat-label">Live CPS Score</span>
+                </div>
+                <div class="stat-box" id="stat-high-cps">
+                    <span class="stat-value" id="val-high-cps">0.0</span>
+                    <span class="stat-label">Your High Score</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="main-workspace">
+            <!-- Left Panel: Click speed test pad -->
+            <div class="workspace-left">
+                <div class="info-card">
+                    <h3>Click Speed Diagnostic</h3>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                        <div class="cps-time-selector">
+                            <button class="cps-time-btn" data-time="1">1 Sec</button>
+                            <button class="cps-time-btn active" data-time="5">5 Sec</button>
+                            <button class="cps-time-btn" data-time="10">10 Sec</button>
+                            <button class="cps-time-btn" data-time="60">60 Sec</button>
+                        </div>
+                        <button id="btn-reset" class="btn-danger" style="padding: 8px 16px; border-radius: 8px; font-weight: 600;">Reset</button>
+                    </div>
+
+                    <div id="cps-pad" class="cps-click-pad">
+                        <div class="cps-click-prompt" id="pad-prompt">Click to start test</div>
+                        <div class="cps-click-subprompt" id="pad-subprompt">Left/Right/Middle clicks supported</div>
+                    </div>
+
+                    <div style="display: flex; justify-content: center;">
+                        <div class="cps-rank-badge" id="rank-badge">
+                            <span>Your Rank:</span>
+                            <strong id="rank-name">Pending</strong>
+                            <span id="rank-emoji">🐢</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Statistics & Live Events -->
+            <div class="workspace-right">
+                <div class="info-card event-details-card">
+                    <h3>Active Click Registry</h3>
+                    <div class="event-details-grid">
+                        <div class="event-property">
+                            <span class="property-name">Last Interval</span>
+                            <span id="reg-interval" class="property-value font-mono">--</span>
+                        </div>
+                        <div class="event-property">
+                            <span class="property-name">Target Button</span>
+                            <span id="reg-button" class="property-value font-mono">--</span>
+                        </div>
+                        <div class="event-property">
+                            <span class="property-name">Coordinates</span>
+                            <span id="reg-coords" class="property-value font-mono">X: 0, Y: 0</span>
+                        </div>
+                        <div class="event-property">
+                            <span class="property-name">Test Status</span>
+                            <span id="reg-status" class="property-value font-mono" style="color: var(--neon-cyan)">Ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Lower Section: Live Click Logger -->
+        <section class="history-section">
+            <div class="history-header">
+                <h2>Diagnostic Click Logger</h2>
+            </div>
+            <div class="history-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Click #</th>
+                            <th>Time Offset</th>
+                            <th>Interval (ms)</th>
+                            <th>Mouse Button</th>
+                            <th>Coordinates</th>
+                        </tr>
+                    </thead>
+                    <tbody id="click-log-body">
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: rgba(255, 255, 255, 0.2);">No click data recorded. Start clicking to generate logs.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-links">
+                <a href="#" id="link-about" class="footer-link">About Us</a>
+                <a href="#" id="link-privacy" class="footer-link">Privacy Policy</a>
+                <a href="#" id="link-contact" class="footer-link">Contact Us</a>
+            </div>
+            <p>KeyPulse &bull; Premium Click Speed Diagnostics &bull; Developed by <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; Zero-latency tracking.</p>
+        </footer>
+    </div>
+
+    <!-- Glassmorphic Modal Dialog -->
+    <div id="modal-container" class="modal-overlay">
+        <div class="modal-card">
+            <button id="modal-close" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div id="modal-content-area" class="modal-body">
+                <!-- Modal content will be dynamically set -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Web Audio Context for generating sound effects on click
+        let audioCtx = null;
+        function playClickSound() {
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = 'sine';
+                // Pitch variation to make clicking sound natural
+                osc.frequency.setValueAtTime(800 + Math.random() * 200, audioCtx.currentTime);
+                
+                gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.08);
+            } catch (e) {
+                console.error("Audio synthesis error:", e);
+            }
+        }
+
+        // Modals management
+        const modalContainer = document.getElementById('modal-container');
+        const modalContentArea = document.getElementById('modal-content-area');
+        const modalClose = document.getElementById('modal-close');
+
+        const modalContents = {
+            about: `<h2>About KeyPulse</h2>
+                    <p>KeyPulse is a high-performance diagnostic suite built for hardware enthusiasts, gamers, and programmers. We leverage cutting-edge browser technologies to offer zero-latency testing, precision input diagnostics, and real-time statistics reporting.</p>
+                    <p>Developed by the team at <a href="https://www.youtube.com/@itsolutionspro" target="_blank" style="color:var(--neon-cyan)">IT Solutions Pro</a>.</p>`,
+            privacy: `<h2>Privacy Policy</h2>
+                      <p>Your privacy is absolute. KeyPulse runs entirely inside your browser (Client-Side). We do not transmit, collect, or store any of your keystrokes, mouse click details, or hardware diagnostic data on any server.</p>
+                      <p>Standard analytics tags are used solely for monitoring aggregate traffic quantities and improving user experience.</p>`,
+            contact: `<h2>Contact Us</h2>
+                      <p>Have suggestions, bug reports, or partnership opportunities? Reach out to us directly via our YouTube channel page or drop an email to: <a href="mailto:itsolutionstechhub@gmail.com" style="color:var(--neon-cyan)">itsolutionstechhub@gmail.com</a>.</p>`
+        };
+
+        function showModal(type) {
+            modalContentArea.innerHTML = modalContents[type] || '';
+            modalContainer.classList.add('active');
+        }
+
+        function closeModal() {
+            modalContainer.classList.remove('active');
+        }
+
+        // Attach event listeners for nav links
+        document.querySelectorAll('#link-about, #link-about-header').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showModal('about'); }));
+        document.querySelectorAll('#link-privacy, #link-privacy-header').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showModal('privacy'); }));
+        document.querySelectorAll('#link-contact, #link-contact-header').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showModal('contact'); }));
+        modalClose.addEventListener('click', closeModal);
+        modalContainer.addEventListener('click', (e) => { if (e.target === modalContainer) closeModal(); });
+
+        // CPS Tester Logic
+        const cpsPad = document.getElementById('cps-pad');
+        const valClicks = document.getElementById('val-clicks');
+        const valTime = document.getElementById('val-time');
+        const valCps = document.getElementById('val-cps');
+        const valHighCps = document.getElementById('val-high-cps');
+        const padPrompt = document.getElementById('pad-prompt');
+        const padSubprompt = document.getElementById('pad-subprompt');
+        const rankName = document.getElementById('rank-name');
+        const rankEmoji = document.getElementById('rank-emoji');
+        const regInterval = document.getElementById('reg-interval');
+        const regButton = document.getElementById('reg-button');
+        const regCoords = document.getElementById('reg-coords');
+        const regStatus = document.getElementById('reg-status');
+        const clickLogBody = document.getElementById('click-log-body');
+        const btnReset = document.getElementById('btn-reset');
+
+        let clickCount = 0;
+        let testDuration = 5; // Default 5 seconds
+        let timeLeft = 5;
+        let isTesting = false;
+        let isFinished = false;
+        let startTime = 0;
+        let lastClickTime = 0;
+        let timerInterval = null;
+        let highScore = parseFloat(localStorage.getItem('cps_high_score') || '0.0');
+
+        valHighCps.textContent = highScore.toFixed(1);
+
+        // Duration selector
+        document.querySelectorAll('.cps-time-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (isTesting) return; // Prevent changing timer mid-test
+                document.querySelectorAll('.cps-time-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                testDuration = parseInt(btn.dataset.time);
+                resetTest();
+            });
+        });
+
+        function resetTest() {
+            clearInterval(timerInterval);
+            clickCount = 0;
+            timeLeft = testDuration;
+            isTesting = false;
+            isFinished = false;
+            startTime = 0;
+            lastClickTime = 0;
+            
+            valClicks.textContent = '0';
+            valTime.innerHTML = `${timeLeft.toFixed(1)}<span class="unit">s</span>`;
+            valCps.textContent = '0.0';
+            
+            padPrompt.textContent = 'Click to start test';
+            padSubprompt.textContent = 'Left/Right/Middle clicks supported';
+            
+            rankName.textContent = 'Pending';
+            rankEmoji.textContent = '🐢';
+            
+            regInterval.textContent = '--';
+            regButton.textContent = '--';
+            regStatus.textContent = 'Ready';
+            regStatus.style.color = 'var(--neon-cyan)';
+            
+            clickLogBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: rgba(255, 255, 255, 0.2);">No click data recorded. Start clicking to generate logs.</td></tr>`;
+        }
+
+        btnReset.addEventListener('click', resetTest);
+
+        function updateRank(cps) {
+            if (cps < 5) {
+                rankName.textContent = 'Turtle';
+                rankEmoji.textContent = '🐢';
+            } else if (cps < 8) {
+                rankName.textContent = 'Rabbit';
+                rankEmoji.textContent = '🐇';
+            } else if (cps < 12) {
+                rankName.textContent = 'Cheetah';
+                rankEmoji.textContent = '🐆';
+            } else {
+                rankName.textContent = 'Dragon';
+                rankEmoji.textContent = '🐉';
+            }
+        }
+
+        function endTest() {
+            isTesting = false;
+            isFinished = true;
+            clearInterval(timerInterval);
+            
+            const finalCps = clickCount / testDuration;
+            valCps.textContent = finalCps.toFixed(1);
+            updateRank(finalCps);
+            
+            regStatus.textContent = 'Finished';
+            regStatus.style.color = '#ef4444';
+            
+            padPrompt.textContent = 'Test Finished!';
+            padSubprompt.textContent = `You scored ${finalCps.toFixed(1)} CPS. Press Reset to try again.`;
+            
+            // Check High Score
+            if (finalCps > highScore) {
+                highScore = finalCps;
+                localStorage.setItem('cps_high_score', highScore.toString());
+                valHighCps.textContent = highScore.toFixed(1);
+                
+                padPrompt.textContent = 'New High Score! 🏆';
+                playVictoryBeep();
+            }
+        }
+
+        function playVictoryBeep() {
+            try {
+                if (!audioCtx) audioCtx = new AudioContext();
+                const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+                notes.forEach((freq, i) => {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.frequency.setValueAtTime(freq, audioCtx.currentTime + i * 0.1);
+                    gain.gain.setValueAtTime(0.06, audioCtx.currentTime + i * 0.1);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.1 + 0.15);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(audioCtx.currentTime + i * 0.1);
+                    osc.stop(audioCtx.currentTime + i * 0.1 + 0.15);
+                });
+            } catch(e){}
+        }
+
+        function startTest() {
+            isTesting = true;
+            startTime = performance.now();
+            lastClickTime = startTime;
+            regStatus.textContent = 'Running';
+            regStatus.style.color = 'var(--neon-cyan)';
+            
+            padPrompt.textContent = 'Click! Click! Click!';
+            padSubprompt.textContent = 'Keep clicking as fast as you can!';
+            
+            clickLogBody.innerHTML = ''; // Clear logger placeholder
+
+            timerInterval = setInterval(() => {
+                const elapsed = (performance.now() - startTime) / 1000;
+                timeLeft = Math.max(0, testDuration - elapsed);
+                valTime.innerHTML = `${timeLeft.toFixed(1)}<span class="unit">s</span>`;
+                
+                const liveCps = clickCount / Math.max(0.1, elapsed);
+                valCps.textContent = liveCps.toFixed(1);
+                updateRank(liveCps);
+
+                if (timeLeft <= 0) {
+                    endTest();
+                }
+            }, 50);
+        }
+
+        // Click pad listeners
+        cpsPad.addEventListener('mousedown', (e) => {
+            e.preventDefault(); // Prevent standard selections
+            if (isFinished) return;
+
+            playClickSound();
+
+            const currentTime = performance.now();
+            if (!isTesting) {
+                startTest();
+            }
+
+            clickCount++;
+            valClicks.textContent = clickCount.toString();
+
+            // Calculate interval
+            const interval = lastClickTime ? (currentTime - lastClickTime) : 0;
+            lastClickTime = currentTime;
+
+            // Mouse button identification
+            let buttonName = 'Left';
+            if (e.button === 1) buttonName = 'Middle';
+            if (e.button === 2) buttonName = 'Right';
+
+            // Coordinates
+            const rect = cpsPad.getBoundingClientRect();
+            const x = Math.round(e.clientX - rect.left);
+            const y = Math.round(e.clientY - rect.top);
+
+            // Update Registry
+            regInterval.textContent = `${interval.toFixed(0)} ms`;
+            regButton.textContent = buttonName;
+            regCoords.textContent = `X: ${x}, Y: ${y}`;
+
+            // Create click ripple effect
+            const ripple = document.createElement('div');
+            ripple.classList.add('ripple');
+            ripple.style.left = `${e.clientX - rect.left - 40}px`;
+            ripple.style.top = `${e.clientY - rect.top - 40}px`;
+            cpsPad.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 400);
+
+            // Log event
+            const offset = (currentTime - startTime) / 1000;
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td class="font-mono" style="color:var(--neon-cyan)">#${clickCount}</td>
+                <td class="font-mono">${offset > 0 ? offset.toFixed(3) + 's' : '0.000s'}</td>
+                <td class="font-mono">${interval > 0 ? interval.toFixed(0) + ' ms' : '--'}</td>
+                <td>${buttonName}</td>
+                <td class="font-mono">X: ${x}, Y: ${y}</td>
+            `;
+            
+            // Prepend to top of log body
+            if (clickLogBody.firstChild) {
+                clickLogBody.insertBefore(newRow, clickLogBody.firstChild);
+            } else {
+                clickLogBody.appendChild(newRow);
+            }
+            
+            // Limit log items to 50
+            if (clickLogBody.children.length > 50) {
+                clickLogBody.lastChild.remove();
+            }
+        });
+
+        // Disable context menu on click pad so right-clicks work correctly
+        cpsPad.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
+</body>
+</html>
