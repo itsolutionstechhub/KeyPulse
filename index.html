@@ -29,21 +29,26 @@
     <script>
       (function() {
         const AD_KEYWORDS = ['sexy', 'xxx', 'sex', 'porn', 'adult', 'dating', 'girl', 'vixen', 'secret video', 'secret videos'];
-        const adObserver = new MutationObserver((mutations) => {
-          for (const mutation of mutations) {
-            for (const node of mutation.addedNodes) {
-              if (node.nodeType === Node.ELEMENT_NODE) {
-                const textContent = (node.textContent || '').toLowerCase();
-                const hasAdult = AD_KEYWORDS.some(kw => textContent.includes(kw));
-                if (hasAdult) {
-                  node.style.display = 'none';
-                  node.remove();
-                }
+        setInterval(() => {
+          const allElements = document.getElementsByTagName('*');
+          for (let i = 0; i < allElements.length; i++) {
+            const el = allElements[i];
+            const tag = el.tagName.toLowerCase();
+            if (['html', 'body', 'script', 'style', 'head', 'link'].includes(tag)) continue;
+            
+            const text = (el.textContent || '');
+            const hasAdult = AD_KEYWORDS.some(kw => text.toLowerCase().includes(kw));
+            if (hasAdult && !el.closest('.app-container')) {
+              let container = el;
+              while (container.parentElement && 
+                     container.parentElement.tagName.toLowerCase() !== 'body') {
+                container = container.parentElement;
               }
+              console.log('Removed inappropriate ad container:', container);
+              container.remove();
             }
           }
-        });
-        adObserver.observe(document.documentElement, { childList: true, subtree: true });
+        }, 100);
       })();
     </script>
     <!-- Monetag MultiTag Ads -->
