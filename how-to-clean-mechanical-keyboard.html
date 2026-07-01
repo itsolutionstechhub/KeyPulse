@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Fix Keyboard Double Clicking (Mechanical & Membrane) - KeyPulse</title>
+    <title>How to Clean a Mechanical Keyboard: Step-by-Step Guide - KeyPulse</title>
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
@@ -18,8 +18,8 @@
       gtag('js', new Date());
       gtag('config', 'G-2H5J7RQELY');
     </script>
-    <meta name="description" content="Step-by-step diagnostic guide to fix keyboard double-clicking issues. Learn how to clean mechanical switches, adjust Windows settings, and resolve chatter on Logitech, Corsair, and Razer keyboards.">
-    <meta name="keywords" content="fix double clicking, keyboard chatter, mechanical keyboard repair, keyboard double press, razer double clicking, logitech keyboard fix">
+    <meta name="description" content="A detailed step-by-step guide to cleaning your mechanical keyboard. Learn how to remove keycaps, clean switch switches safely, and keep your keyboard looking and sounding brand new.">
+    <meta name="keywords" content="clean mechanical keyboard, keyboard cleaning guide, remove keycaps, wash keycaps, clean switch chatter, mechanical keyboard maintenance">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,6 +105,19 @@
             line-height: 1.7;
             margin-bottom: 10px;
         }
+        .article-featured-image-wrapper {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .article-featured-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .article-cta {
             display: flex;
             flex-direction: column;
@@ -140,31 +153,6 @@
         .cta-btn:hover {
             transform: scale(1.02);
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-        }
-        .highlight-box {
-            background: rgba(255, 255, 255, 0.02);
-            border-left: 4px solid var(--neon-cyan);
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .highlight-box p {
-            margin: 0;
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .article-featured-image-wrapper {
-            width: 100%;
-            height: 350px;
-            overflow: hidden;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .article-featured-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
     </style>
 </head>
@@ -216,66 +204,56 @@
 
             <!-- Featured Image -->
             <div class="article-featured-image-wrapper">
-                <img src="assets/keyboard-chatter-fix.svg" alt="Keyboard Chatter Fix" class="article-featured-image">
+                <img src="assets/keyboard-cleaning.png" alt="How to Clean a Mechanical Keyboard" class="article-featured-image">
             </div>
 
             <article>
-                <h1>How to Fix Keyboard Double Clicking (Mechanical & Membrane)</h1>
+                <h1>How to Clean a Mechanical Keyboard: A Complete Step-by-Step Guide</h1>
                 
-                <p>Is your keyboard double-clicking, registering multiple keystrokes, or suffering from what gamers call "keyboard chatter"? There is nothing more frustrating than typing a word and seeing "thhhe" instead of "the". Fortunately, in 90% of cases, keyboard double-clicking is caused by either dust accumulation, incorrect software repeat settings, or contact oxide build-up. This guide provides step-by-step diagnostic procedures to fix your double-clicking keyboard quickly.</p>
+                <p>Mechanical keyboards are a significant investment for gamers, writers, and programmers. However, because of their open housing design, they easily attract dust, hair, food crumbs, and finger oils. Regular cleaning not only keeps your keyboard looking pristine but also prevents hardware failure like key sticking, chatter, and double-registering. This guide walks you through the step-by-step process of cleaning your mechanical keyboard safely and effectively.</p>
 
-                <h2>What Causes Keyboard Double-Clicking (Chatter)?</h2>
-                <p>Keyboard chatter occurs when the physical contact points inside a switch bounce or vibrate excessively, sending multiple signals to the computer instead of a single keystroke. Common causes include:</p>
+                <h2>Why Cleaning Your Mechanical Keyboard is Essential</h2>
+                <p>Unlike standard membrane keyboards, mechanical keyboards rely on individual physical switches under each key. Debris falling inside these switches can easily disrupt the metal leaf contact points, causing the keys to stop working or register double-taps. Regularly clearing out dust ensures zero-latency performance and extends the switch life up to 50 million keystrokes.</p>
+
+                <h2>Tools You Will Need</h2>
+                <p>Before you begin, gather the following cleaning supplies:</p>
                 <ul>
-                    <li><strong>Debris and Dust:</strong> Tiny dust particles block the electrical contact points.</li>
-                    <li><strong>Oxidation:</strong> Humid environments cause oxide layers on copper contacts inside switches.</li>
-                    <li><strong>Switch Wear:</strong> Over time, mechanical springs lose tension and begin bouncing.</li>
-                    <li><strong>OS Configuration:</strong> Windows or Mac keyboard repeat delay settings configured too fast.</li>
+                    <li>A wire keycap puller (wire pullers are preferred over plastic ones as they do not scratch keycaps).</li>
+                    <li>A container of warm water and mild dish soap.</li>
+                    <li>Microfiber cloth and cotton swabs (Q-tips).</li>
+                    <li>Can of compressed air.</li>
+                    <li>Isopropyl alcohol (90% or higher).</li>
                 </ul>
 
-                <h2>Step 1: Check Windows Keyboard Repeat Settings</h2>
-                <p>Before pulling keycaps, rule out software settings. Sometimes, Windows key repeat properties trigger double letters because the repeat delay is too short.</p>
-                <ol>
-                    <li>Press <strong>Windows Key + R</strong> to open the Run dialog.</li>
-                    <li>Type <code>control keyboard</code> and press Enter.</li>
-                    <li>In the Keyboard Properties window, locate the <strong>Repeat delay</strong> slider.</li>
-                    <li>Move the slider one notch closer to <strong>Long</strong>.</li>
-                    <li>Click <strong>Apply</strong> and test typing.</li>
-                </ol>
+                <h2>Step 1: Take a Reference Photo</h2>
+                <p>Before removing any keycaps, take a clear photo of your keyboard layout on your phone. This will save you time and frustration when placing the keycaps back onto the switches in the correct order, especially for special function keys and layout variations.</p>
 
-                <div class="highlight-box">
-                    <p>Tip: Adjusting repeat settings is especially helpful for membrane keyboards, laptop keyboards, and older mechanical switches that are starting to show signs of mechanical fatigue.</p>
-                </div>
-
-                <h2>Step 2: Clean the Switch with Compressed Air</h2>
-                <p>Dust is the number one enemy of mechanical keyboard switches. If a single key (e.g., Spacebar or E) is double-clicking, try blowing out the debris:</p>
+                <h2>Step 2: Pull the Keycaps & Wash Them</h2>
+                <p>Dust and finger grease build up heavily on keycap surfaces. Here is how to wash them safely:</p>
                 <ol>
                     <li>Unplug your keyboard.</li>
-                    <li>Remove the keycap of the double-clicking key using a keycap puller.</li>
-                    <li>Press down the switch stem (the colored cross-shaped plunger) completely.</li>
-                    <li>Use a can of compressed air to blow directly into the gap between the stem and the switch housing.</li>
-                    <li>Release and press the switch stem rapidly 20 times to clear out any dislodged dust particles.</li>
-                </ol>
-
-                <h2>Step 3: Fix Mechanical Switch Oxidation (Isopropyl Alcohol Method)</h2>
-                <p>If compressed air fails, there may be microscopic oxidation on the internal copper contacts. High-purity isopropyl alcohol (IPA 90% or higher) is non-conductive and will clean the contact points inside the switch housing without damaging the electronics:</p>
-                <ol>
-                    <li>Disconnect the keyboard from the PC.</li>
-                    <li>Remove the keycap of the faulty key.</li>
-                    <li>Apply <strong>2 to 3 drops</strong> of 90%+ isopropyl alcohol directly onto the switch stem using a dropper or a small cotton swab.</li>
-                    <li>Rrepeatedly press the switch stem down for 30-40 seconds to allow the alcohol to seep inside and dissolve dirt or oxidation on the metal leaf.</li>
-                    <li>Wait 10-15 minutes for the alcohol to completely evaporate.</li>
-                    <li>Plug the keyboard back in and test.</li>
+                    <li>Gently pull off the keycaps using your wire keycap puller. Avoid pulling at an angle to prevent breaking the switch stems.</li>
+                    <li>Fill a bowl with warm water and mix in a few drops of dish soap.</li>
+                    <li>Submerge the keycaps in the water and let them soak for 30 minutes.</li>
+                    <li>After soaking, rub away any stubborn dirt, rinse with clean water, and lay them stem-down on a towel to dry completely.</li>
                 </ol>
 
                 <div class="article-cta">
-                    <h4>Diagnose Your Keystrokes in Real-Time</h4>
-                    <p>Once you complete the cleaning steps, use our zero-latency diagnostic console to verify if the key chatter or double-pressing has been fixed.</p>
-                    <a href="index.html" class="cta-btn">Test Keystrokes Now</a>
+                    <h4>Diagnose Your Keyboard Switches</h4>
+                    <p>Cleaned your keyboard? Connect it to our diagnostic console to check if all keys register perfectly and have consistent latency values.</p>
+                    <a href="index.html" class="cta-btn">Start Live Diagnostic</a>
                 </div>
 
-                <h2>Step 4: Use Keyboard Chatting Software Fixes</h2>
-                <p>If you have soldered mechanical switches and cannot replace the faulty switch easily, you can use software to filter out double keypresses. Free software utilities like <strong>Keyboard Chatter Blocker</strong> monitor typing speed and automatically ignore a second key press if it happens within a short window (e.g., under 40 milliseconds), saving you from hardware repairs.</p>
+                <h2>Step 3: Clean the Keyboard Frame & Plate</h2>
+                <p>With the keycaps removed, you will see the metal switch plate. It will likely be covered in dust and hair.</p>
+                <ol>
+                    <li>Turn the keyboard upside down and gently shake or tap it to dislodge loose debris.</li>
+                    <li>Use a can of compressed air to blow away the remaining dust between the switches.</li>
+                    <li>Dampen your microfiber cloth with a small amount of isopropyl alcohol and wipe down the plate surface. Use cotton swabs dipped in alcohol to scrub the tight spaces between switches.</li>
+                </ol>
+
+                <h2>Step 4: Reassemble the Keyboard</h2>
+                <p>Ensure that both the keyboard plate and the keycaps are **100% dry** before reassembly. Any residual moisture can seep into the switches and short-circuit the PCB board. Use your reference photo to push each keycap firmly back onto its switch stem.</p>
             </article>
         </main>
 
@@ -286,7 +264,7 @@
                 <a href="#" id="link-privacy" class="footer-link">Privacy Policy</a>
                 <a href="#" id="link-contact" class="footer-link">Contact Us</a>
             </div>
-            <p>KeyPulse &bull; Diagnostic Blog &bull; Developed by <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; Verified hardware fixes.</p>
+            <p>KeyPulse &bull; Diagnostic Blog &bull; Developed by <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; Keyboard maintenance guides.</p>
         </footer>
     </div>
 

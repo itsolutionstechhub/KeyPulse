@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#12162b"/>
+      <stop offset="100%" stop-color="#05060b"/>
+    </radialGradient>
+    
+    <!-- Neon Cyan Glow -->
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#0080ff"/>
+    </linearGradient>
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Neon Pink Glow -->
+    <linearGradient id="neon-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f"/>
+      <stop offset="100%" stop-color="#aa00ff"/>
+    </linearGradient>
+    <filter id="glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- Grid Pattern -->
+  <g opacity="0.05">
+    <path d="M 0,50 L 800,50 M 0,100 L 800,100 M 0,150 L 800,150 M 0,200 L 800,200 M 0,250 L 800,250 M 0,300 L 800,300 M 0,350 L 800,350 M 0,400 L 800,400" stroke="#fff" stroke-width="1"/>
+    <path d="M 100,0 L 100,450 M 200,0 L 200,450 M 300,0 L 300,450 M 400,0 L 400,450 M 500,0 L 500,450 M 600,0 L 600,450 M 700,0 L 700,450" stroke="#fff" stroke-width="1"/>
+  </g>
+
+  <!-- Laptop Outline Perspective -->
+  <path d="M 150,320 L 650,320 L 720,380 L 80,380 Z" fill="#0d0e15" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+  
+  <!-- Glowing Laptop Screen hinge glow -->
+  <line x1="180" y1="318" x2="620" y2="318" stroke="url(#neon-cyan)" stroke-width="4" filter="url(#glow-cyan)"/>
+  
+  <!-- Keycap Matrix (Rows of keys with neon backlight glows) -->
+  <g transform="translate(100, 325)">
+    <!-- Row 1 -->
+    <rect x="20" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="60" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="100" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="140" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="180" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="220" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="260" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="300" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="340" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="380" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="420" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="460" y="5" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="500" y="5" width="60" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    
+    <!-- Row 2 -->
+    <rect x="10" y="25" width="45" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="65" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="105" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="145" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="185" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="225" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="265" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="305" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="345" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="385" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="425" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="465" y="25" width="30" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="505" y="25" width="45" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+
+    <!-- Row 3 (Spacebar row) -->
+    <rect x="5" y="45" width="55" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="70" y="45" width="35" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <rect x="115" y="45" width="35" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="1" filter="url(#glow-cyan)" opacity="0.8"/>
+    <!-- Spacebar -->
+    <rect x="160" y="45" width="220" height="15" rx="3" fill="#1e2238" stroke="url(#neon-cyan)" stroke-width="2" filter="url(#glow-cyan)"/>
+    <rect x="390" y="45" width="35" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="430" y="45" width="35" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+    <rect x="470" y="45" width="80" height="15" rx="3" fill="#1e2238" stroke="url(#neon-pink)" stroke-width="1" filter="url(#glow-pink)" opacity="0.8"/>
+  </g>
+
+  <!-- Large Keyboard Outline Art (Conceptual Icon Overlay) -->
+  <g transform="translate(260, 40)" filter="url(#glow-cyan)">
+    <!-- Main Outer Frame -->
+    <rect x="0" y="0" width="280" height="150" rx="20" fill="rgba(18, 22, 41, 0.7)" stroke="url(#neon-cyan)" stroke-width="4"/>
+    
+    <!-- Neon Keys Design inside conceptual frame -->
+    <rect x="30" y="30" width="30" height="30" rx="6" fill="rgba(255,255,255,0.05)" stroke="url(#neon-cyan)" stroke-width="2"/>
+    <rect x="70" y="30" width="30" height="30" rx="6" fill="rgba(255,255,255,0.05)" stroke="url(#neon-cyan)" stroke-width="2"/>
+    <rect x="110" y="30" width="30" height="30" rx="6" fill="rgba(255,255,255,0.05)" stroke="url(#neon-cyan)" stroke-width="2"/>
+    <rect x="150" y="30" width="30" height="30" rx="6" fill="rgba(255,255,255,0.05)" stroke="url(#neon-cyan)" stroke-width="2"/>
+    <rect x="190" y="30" width="60" height="30" rx="6" fill="rgba(255,255,255,0.05)" stroke="url(#neon-pink)" stroke-width="2" filter="url(#glow-pink)"/>
+
+    <rect x="30" y="70" width="50" height="30" rx="6" fill="rgba(255,255,255,0.05)" stroke="url(#neon-cyan)" stroke-width="2"/>
+    <rect x="90" y="70" width="100" height="30" rx="6" fill="rgba(0, 240, 255, 0.15)" stroke="url(#neon-cyan)" stroke-width="3"/>
+    <rect x="200" y="70" width="50" height="30" rx="6" fill="rgba(255,255,255,0.05)" stroke="url(#neon-pink)" stroke-width="2" filter="url(#glow-pink)"/>
+
+    <!-- Sparkles/Stars -->
+    <path d="M 230,15 L 235,25 L 245,25 L 237,30 L 240,40 L 230,33 L 220,40 L 223,30 L 215,25 L 225,25 Z" fill="#ff007f" filter="url(#glow-pink)"/>
+    <path d="M 50,110 L 52,115 L 57,115 L 53,117 L 54,122 L 50,118 L 46,122 L 47,117 L 43,115 L 48,115 Z" fill="#00f0ff" filter="url(#glow-cyan)" transform="scale(1.5) translate(-25, -50)"/>
+  </g>
+
+  <!-- Glowing Title Overlay -->
+  <text x="400" y="250" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="28" font-weight="700" fill="#fff" letter-spacing="2">
+    LAPTOP KEYBOARD BACKLIGHT
+  </text>
+  <text x="400" y="280" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="14" font-weight="500" fill="url(#neon-cyan)" letter-spacing="1">
+    ASUS • HP • DELL • LENOVO • ACER
+  </text>
+</svg>

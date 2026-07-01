@@ -223,6 +223,19 @@
             transform: scale(1.02);
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
         }
+        .article-featured-image-wrapper {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .article-featured-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body class="theme-neon-dark">
@@ -269,6 +282,11 @@
                 <span>By KeyPulse Tech Labs</span>
                 <span>&bull;</span>
                 <span>6 Min Read</span>
+            </div>
+
+            <!-- Featured Image -->
+            <div class="article-featured-image-wrapper">
+                <img src="assets/keyboard-backlight.svg" alt="Laptop Keyboard Backlight" class="article-featured-image">
             </div>
 
             <article>

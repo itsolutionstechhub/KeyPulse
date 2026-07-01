@@ -140,6 +140,23 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        .blog-thumbnail-wrapper {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .blog-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .blog-card:hover .blog-thumbnail {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="theme-neon-dark">
@@ -190,13 +207,16 @@
                 <!-- Blog Card 1 -->
                 <article class="blog-card">
                     <div>
+                        <div class="blog-thumbnail-wrapper">
+                            <img src="assets/keyboard-chatter-fix.svg" alt="Keyboard Chatter Fix" class="blog-thumbnail">
+                        </div>
                         <div class="blog-meta">
                             <span>June 30, 2026</span>
                             <span>&bull;</span>
                             <span>5 Min Read</span>
                         </div>
-                        <h3 class="blog-title">How to Fix Keyboard Double Clicking (Mechanical & Membrane)</h3>
-                        <p class="blog-excerpt">Is your keyboard registering multiple keystrokes or chatter when you press a key once? Discover step-by-step diagnostic fixes for switches, software settings, and hardware cleaning.</p>
+                        <h3 class="blog-title">How to Fix Keyboard Double Clicking</h3>
+                        <p class="blog-excerpt">Is your keyboard registering chatter or double letters? Discover step-by-step diagnostic fixes for mechanical and membrane switch chatter issues.</p>
                     </div>
                     <a href="how-to-fix-keyboard-double-clicking.html" class="blog-link">
                         Read Guide
@@ -210,15 +230,87 @@
                 <!-- Blog Card 2 -->
                 <article class="blog-card">
                     <div>
+                        <div class="blog-thumbnail-wrapper">
+                            <img src="assets/keyboard-backlight.svg" alt="Laptop Keyboard Backlight" class="blog-thumbnail">
+                        </div>
                         <div class="blog-meta">
                             <span>June 30, 2026</span>
                             <span>&bull;</span>
                             <span>6 Min Read</span>
                         </div>
-                        <h3 class="blog-title">How to Turn On Keyboard Light on Laptop (Asus, HP, Dell, Lenovo, Acer)</h3>
-                        <p class="blog-excerpt">Struggling to find the backlight keyboard shortcuts for your laptop? Learn how to enable and adjust keyboard backlight lights on Asus Vivobook, HP Pavilion, Dell, Lenovo, and Acer laptops.</p>
+                        <h3 class="blog-title">How to Turn On Keyboard Light on Laptop</h3>
+                        <p class="blog-excerpt">Struggling to find the backlight keyboard shortcuts for your laptop? Learn how to enable and adjust keyboard backlight light settings easily.</p>
                     </div>
                     <a href="how-to-turn-on-keyboard-light-on-laptop.html" class="blog-link">
+                        Read Guide
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="blog-card">
+                    <div>
+                        <div class="blog-thumbnail-wrapper">
+                            <img src="assets/keyboard-cleaning.png" alt="Clean Mechanical Keyboard" class="blog-thumbnail">
+                        </div>
+                        <div class="blog-meta">
+                            <span>June 30, 2026</span>
+                            <span>&bull;</span>
+                            <span>5 Min Read</span>
+                        </div>
+                        <h3 class="blog-title">How to Clean a Mechanical Keyboard</h3>
+                        <p class="blog-excerpt">Step-by-step beginner's guide to cleaning mechanical switches, washing keycaps safely, and maintaining clean hardware plates.</p>
+                    </div>
+                    <a href="how-to-clean-mechanical-keyboard.html" class="blog-link">
+                        Read Guide
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article class="blog-card">
+                    <div>
+                        <div class="blog-thumbnail-wrapper">
+                            <img src="assets/mechanical-vs-membrane.svg" alt="Mechanical vs Membrane Keyboards" class="blog-thumbnail">
+                        </div>
+                        <div class="blog-meta">
+                            <span>June 30, 2026</span>
+                            <span>&bull;</span>
+                            <span>5 Min Read</span>
+                        </div>
+                        <h3 class="blog-title">Mechanical vs. Membrane Keyboards</h3>
+                        <p class="blog-excerpt">Which is best for gaming & typing? Detailed structural differences, NKRO key rollover comparison, and switch types explained.</p>
+                    </div>
+                    <a href="mechanical-vs-membrane-keyboards.html" class="blog-link">
+                        Read Guide
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Blog Card 5 -->
+                <article class="blog-card">
+                    <div>
+                        <div class="blog-thumbnail-wrapper">
+                            <img src="assets/laptop-keys-repair.svg" alt="Laptop Keys Repair" class="blog-thumbnail">
+                        </div>
+                        <div class="blog-meta">
+                            <span>June 30, 2026</span>
+                            <span>&bull;</span>
+                            <span>6 Min Read</span>
+                        </div>
+                        <h3 class="blog-title">Fix Unresponsive Laptop Keyboard Keys</h3>
+                        <p class="blog-excerpt">Laptop keyboard key not responding on Windows 10 or 11? Learn how to fix driver conflicts, accessibility glitches, and dirty dome plates.</p>
+                    </div>
+                    <a href="how-to-fix-laptop-keyboard-keys-not-working.html" class="blog-link">
                         Read Guide
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>

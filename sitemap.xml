@@ -5,10 +5,10 @@
     <loc>https://keypluse.online/</loc>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://keypluse.online/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://keypluse.online/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://keypluse.online/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://keypluse.online/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://keypluse.online/" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://keypluse.online/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://keypluse.online/?lang=es" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://keypluse.online/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://keypluse.online/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://keypluse.online/?lang=pt" />
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -34,6 +34,24 @@
   <url>
     <loc>https://keypluse.online/how-to-turn-on-keyboard-light-on-laptop.html</loc>
     <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://keypluse.online/how-to-clean-mechanical-keyboard.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://keypluse.online/mechanical-vs-membrane-keyboards.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://keypluse.online/how-to-fix-laptop-keyboard-keys-not-working.html</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

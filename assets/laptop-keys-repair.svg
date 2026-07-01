@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#12162b"/>
+      <stop offset="100%" stop-color="#05060b"/>
+    </radialGradient>
+    
+    <!-- Neon Cyan -->
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#0080ff"/>
+    </linearGradient>
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Neon Pink -->
+    <linearGradient id="neon-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f"/>
+      <stop offset="100%" stop-color="#aa00ff"/>
+    </linearGradient>
+    <filter id="glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- Conceptual Laptop Frame -->
+  <g transform="translate(150, 40)">
+    <!-- Screen Outline -->
+    <rect x="50" y="20" width="400" height="230" rx="10" fill="#0d0e15" stroke="rgba(255,255,255,0.08)" stroke-width="3"/>
+    <rect x="60" y="30" width="380" height="210" rx="4" fill="#06070c"/>
+    
+    <!-- Laptop Base -->
+    <path d="M 20,250 L 480,250 L 520,290 L -20,290 Z" fill="#1b1d2e" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+    <!-- Hinge -->
+    <rect x="180" y="244" width="140" height="10" rx="3" fill="#0d0e15"/>
+
+    <!-- Diagnostic Screen Graphics (Inside screen) -->
+    <g transform="translate(80, 50)">
+      <!-- Circle Gauge -->
+      <circle cx="100" cy="85" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8"/>
+      <path d="M 100,35 A 50,50 0 0,1 150,85" fill="none" stroke="url(#neon-cyan)" stroke-width="8" filter="url(#glow-cyan)" stroke-linecap="round"/>
+      <text x="100" y="92" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="20" fill="#fff">
+        85%
+      </text>
+      <text x="100" y="155" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="12" fill="rgba(255,255,255,0.4)">
+        SYSTEM HEALTH
+      </text>
+
+      <!-- Warning Sign (Diagnostic Alert) -->
+      <g transform="translate(200, 45)" filter="url(#glow-pink)">
+        <polygon points="40,10 80,80 0,80" fill="rgba(255, 0, 127, 0.1)" stroke="url(#neon-pink)" stroke-width="2"/>
+        <text x="40" y="70" text-anchor="middle" font-family="'Outfit', sans-serif" font-weight="bold" font-size="40" fill="url(#neon-pink)">
+          !
+        </text>
+        <text x="40" y="110" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="12" fill="#fff" font-weight="600">
+          KEYS ERROR
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Title Labels -->
+  <text x="400" y="375" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="26" font-weight="700" fill="#fff" letter-spacing="1">
+    FIX UNRESPONSIVE LAPTOP KEYS
+  </text>
+  <text x="400" y="405" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="14" font-weight="500" fill="url(#neon-cyan)" letter-spacing="0.5">
+    WINDOWS 10/11 • DRIVER RESOLUTION • HARDWARE FIXES
+  </text>
+</svg>
