@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - KeyPulse</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+    <!-- Meta tags for SEO -->
+    <meta name="monetag" content="cfb12011065fa4e7236db03fa3cd690c">
+    <meta name="google-site-verification" content="vofhFxDAIj9Q2VNXKJgiv6-A5TOReD46r1HDH79yFSU" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2H5J7RQELY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2H5J7RQELY');
+    </script>
+    <meta name="description" content="Learn more about KeyPulse, our mission to provide high-performance hardware diagnostic tools, and the team behind it.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Client-side Inappropriate Ad Filter -->
+    <script>
+      (function() {
+        const AD_KEYWORDS = ['sexy', 'xxx', 'sex', 'porn', 'adult', 'dating', 'girl', 'vixen', 'secret video', 'secret videos'];
+        setInterval(() => {
+          const allElements = document.getElementsByTagName('*');
+          for (let i = 0; i < allElements.length; i++) {
+            const el = allElements[i];
+            const tag = el.tagName.toLowerCase();
+            if (['html', 'body', 'script', 'style', 'head', 'link'].includes(tag)) continue;
+            
+            const text = (el.textContent || '');
+            const hasAdult = AD_KEYWORDS.some(kw => text.toLowerCase().includes(kw));
+            if (hasAdult && !el.closest('.app-container')) {
+              let container = el;
+              while (container.parentElement && 
+                     container.parentElement.tagName.toLowerCase() !== 'body') {
+                container = container.parentElement;
+              }
+              console.log('Removed inappropriate ad container:', container);
+              container.remove();
+            }
+          }
+        }, 100);
+      })();
+    </script>
+    <!-- Monetag MultiTag Ads -->
+    <script src="https://quge5.com/88/tag.min.js" data-zone="255162" async data-cfasync="false"></script>
+    
+    <style>
+        .page-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .page-container h1 {
+            font-size: 32px;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 12px;
+        }
+        .page-container h2 {
+            font-size: 22px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 16px;
+        }
+        .page-container p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="theme-neon-dark">
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="brand-wrapper">
+                <div class="brand">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                            <line x1="6" y1="8" x2="6.01" y2="8"></line>
+                            <line x1="10" y1="8" x2="10.01" y2="8"></line>
+                            <line x1="14" y1="8" x2="14.01" y2="8"></line>
+                            <line x1="18" y1="8" x2="18.01" y2="8"></line>
+                            <line x1="6" y1="12" x2="6.01" y2="12"></line>
+                            <line x1="10" y1="12" x2="10.01" y2="12"></line>
+                            <line x1="14" y1="12" x2="14.01" y2="12"></line>
+                            <line x1="18" y1="12" x2="18.01" y2="12"></line>
+                            <line x1="7" y1="16" x2="17" y2="16"></line>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>KeyPulse</h1>
+                        <span id="logo-tagline">Smart Diagnostic Console</span>
+                    </div>
+                </div>
+                <nav class="header-nav">
+                    <a href="/" class="header-link">Keyboard</a>
+                    <a href="cps-tester" class="header-link">CPS Tester</a>
+                    <a href="blog" class="header-link">Blog</a>
+                    <a href="about-us" class="header-link active">About</a>
+                    <a href="privacy-policy" class="header-link">Privacy</a>
+                    <a href="contact-us" class="header-link">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="page-container">
+            <h1>About Us</h1>
+            <p>Welcome to <strong>KeyPulse</strong>, your premier web utility for computer input peripheral diagnostics. We build high-performance, web-based utilities that help gamers, developers, and writers troubleshoot their hardware in real-time, completely free of charge.</p>
+            
+            <h2>Our Mission</h2>
+            <p>At KeyPulse, our mission is simple: to make hardware diagnostics easy and accessible to everyone. We believe that you shouldn't have to download third-party software or pay expensive service fees to test if your keyboard or mouse is working properly. By leveraging modern web standards, we provide zero-latency utility tools that run entirely inside your browser.</p>
+            
+            <h2>What We Offer</h2>
+            <p>We provide two core testing tools, along with a comprehensive library of tech articles:</p>
+            <ul>
+                <li><strong>Interactive Keyboard Tester:</strong> An advanced console that displays real-time key registration, allowing you to test for key ghosting, keyboard chatter, and key response delay.</li>
+                <li><strong>Mouse CPS Tester:</strong> A click speed utility designed to measure your Clicks Per Second (CPS) with real-time logs and ranking metrics.</li>
+                <li><strong>Knowledge Base &amp; Blogs:</strong> Expert maintenance and repair guides, ranging from fixing double-clicking switches to enabling laptop keyboard lights.</li>
+            </ul>
+
+            <h2>The Team</h2>
+            <p>KeyPulse was developed and is maintained by the tech team at <a href="https://www.youtube.com/@itsolutionspro" target="_blank" style="color:var(--neon-cyan)">IT Solutions Pro</a>. We are passionate about computer hardware, repairs, and software development, and we continuously update our platform to support new hardware features and web diagnostics.</p>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-links">
+                <a href="about-us" class="footer-link">About Us</a>
+                <a href="privacy-policy" class="footer-link">Privacy Policy</a>
+                <a href="contact-us" class="footer-link">Contact Us</a>
+            </div>
+            <p>KeyPulse &bull; Diagnostic Blog &bull; Developed by <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

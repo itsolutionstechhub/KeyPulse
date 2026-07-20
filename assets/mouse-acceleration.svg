@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#12162b"/>
+      <stop offset="100%" stop-color="#05060b"/>
+    </radialGradient>
+    
+    <!-- Neon Pink -->
+    <linearGradient id="neon-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f"/>
+      <stop offset="100%" stop-color="#aa00ff"/>
+    </linearGradient>
+    <filter id="glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Neon Cyan -->
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#0080ff"/>
+    </linearGradient>
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- Graph grid -->
+  <g stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none">
+    <path d="M 150,100 L 150,300 L 650,300 M 150,250 L 650,250 M 150,200 L 650,200 M 150,150 L 650,150" />
+    <path d="M 250,100 L 250,300 M 350,100 L 350,300 M 450,100 L 450,300 M 550,100 L 550,300" />
+  </g>
+  <text x="140" y="305" font-family="'Outfit', sans-serif" font-size="11" fill="rgba(255,255,255,0.3)">0</text>
+  <text x="655" y="305" font-family="'Outfit', sans-serif" font-size="11" fill="rgba(255,255,255,0.3)">Physical Speed</text>
+  <text x="140" y="95" font-family="'Outfit', sans-serif" font-size="11" fill="rgba(255,255,255,0.3)">Cursor Speed</text>
+
+  <!-- Raw Input: Linear Straight line (1:1) -->
+  <path d="M 150,300 L 550,140" fill="none" stroke="url(#neon-cyan)" stroke-width="4" filter="url(#glow-cyan)" stroke-linecap="round"/>
+  <text x="500" y="125" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="url(#neon-cyan)">RAW INPUT (1:1)</text>
+
+  <!-- Mouse Accel: Curved line -->
+  <path d="M 150,300 Q 350,270 550,100" fill="none" stroke="url(#neon-pink)" stroke-width="4" filter="url(#glow-pink)" stroke-linecap="round"/>
+  <text x="540" y="80" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="url(#neon-pink)">MOUSE ACCELERATION</text>
+
+  <!-- Main Title -->
+  <text x="400" y="350" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="22" font-weight="700" fill="#fff" letter-spacing="1">
+    WHAT IS MOUSE ACCELERATION?
+  </text>
+  <text x="400" y="375" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="12" font-weight="500" fill="url(#neon-cyan)" letter-spacing="0.5">
+    WHY DISABLING "ENHANCE POINTER PRECISION" IMPROVES GAMING AIM
+  </text>
+</svg>

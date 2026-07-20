@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#12162b"/>
+      <stop offset="100%" stop-color="#05060b"/>
+    </radialGradient>
+    
+    <!-- Neon Cyan -->
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#0080ff"/>
+    </linearGradient>
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- Speedometer dial arch -->
+  <path d="M 250,260 A 160,160 0 0,1 550,260" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="25" stroke-linecap="round"/>
+  <!-- Glowing speed section -->
+  <path d="M 250,260 A 160,160 0 0,1 460,130" fill="none" stroke="url(#neon-cyan)" stroke-width="25" stroke-linecap="round" filter="url(#glow-cyan)"/>
+
+  <!-- Speed ticks -->
+  <text x="220" y="270" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" fill="rgba(255,255,255,0.4)">0 CPS</text>
+  <text x="400" y="85" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" fill="rgba(255,255,255,0.4)">10 CPS</text>
+  <text x="580" y="270" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" fill="rgba(255,255,255,0.4)">20 CPS</text>
+
+  <!-- Speedometer Needle -->
+  <g transform="translate(400, 260) rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="-140" stroke="#ff007f" stroke-width="5" stroke-linecap="round" filter="url(#glow-cyan)"/>
+    <circle cx="0" cy="0" r="16" fill="#12162b" stroke="#ff007f" stroke-width="3"/>
+  </g>
+
+  <!-- CPS Digital Meter -->
+  <g transform="translate(320, 290)" filter="url(#glow-cyan)">
+    <rect x="0" y="0" width="160" height="70" rx="12" fill="rgba(18, 22, 41, 0.8)" stroke="url(#neon-cyan)" stroke-width="2"/>
+    <text x="80" y="38" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="32" font-weight="900" fill="#fff">14.5</text>
+    <text x="80" y="58" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">CLICKS / SEC</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="400" y="390" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="22" font-weight="700" fill="#fff" letter-spacing="1">
+    IMPROVE YOUR CLICK SPEED (CPS)
+  </text>
+  <text x="400" y="415" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="11" font-weight="500" fill="url(#neon-cyan)" letter-spacing="0.5">
+    JITTER AND BUTTERFLY CLICKING TECHNIQUES EXPLAINED
+  </text>
+</svg>

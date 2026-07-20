@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Fix Keyboard Double Clicking (Mechanical & Membrane) - KeyPulse</title>
+    <title>How to Fix Sticky Keys on Windows 10 & 11 - KeyPulse</title>
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
@@ -18,8 +18,8 @@
       gtag('js', new Date());
       gtag('config', 'G-2H5J7RQELY');
     </script>
-    <meta name="description" content="Step-by-step diagnostic guide to fix keyboard double-clicking issues. Learn how to clean mechanical switches, adjust Windows settings, and resolve chatter on Logitech, Corsair, and Razer keyboards.">
-    <meta name="keywords" content="fix double clicking, keyboard chatter, mechanical keyboard repair, keyboard double press, razer double clicking, logitech keyboard fix">
+    <meta name="description" content="Step-by-step tutorial to turn off Sticky Keys on Windows 10 & 11. Learn how to disable the repeated Shift key shortcut popup and beep sound permanently.">
+    <meta name="keywords" content="fix sticky keys, disable sticky keys windows 11, turn off shift key shortcut, disable accessibility keyboard popup, keyboard beep sound windows">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,6 +105,19 @@
             line-height: 1.7;
             margin-bottom: 10px;
         }
+        .article-featured-image-wrapper {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .article-featured-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .article-cta {
             display: flex;
             flex-direction: column;
@@ -140,31 +153,6 @@
         .cta-btn:hover {
             transform: scale(1.02);
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-        }
-        .highlight-box {
-            background: rgba(255, 255, 255, 0.02);
-            border-left: 4px solid var(--neon-cyan);
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .highlight-box p {
-            margin: 0;
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .article-featured-image-wrapper {
-            width: 100%;
-            height: 350px;
-            overflow: hidden;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .article-featured-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
     </style>
 </head>
@@ -204,10 +192,10 @@
             </div>
         </header>
 
-        <!-- Main Article Container -->
+        <!-- Main Workspace -->
         <main class="article-container">
             <div class="article-meta">
-                <span>Published on June 30, 2026</span>
+                <span>Published on July 20, 2026</span>
                 <span>&bull;</span>
                 <span>By KeyPulse Tech Labs</span>
                 <span>&bull;</span>
@@ -216,66 +204,56 @@
 
             <!-- Featured Image -->
             <div class="article-featured-image-wrapper">
-                <img src="assets/keyboard-chatter-fix.svg" alt="Keyboard Chatter Fix" class="article-featured-image">
+                <img src="assets/sticky-keys.svg" alt="How to Fix Sticky Keys on Windows" class="article-featured-image">
             </div>
 
             <article>
-                <h1>How to Fix Keyboard Double Clicking (Mechanical & Membrane)</h1>
+                <h1>How to Fix Sticky Keys on Windows 10 &amp; 11</h1>
                 
-                <p>Is your keyboard double-clicking, registering multiple keystrokes, or suffering from what gamers call "keyboard chatter"? There is nothing more frustrating than typing a word and seeing "thhhe" instead of "the". Fortunately, in 90% of cases, keyboard double-clicking is caused by either dust accumulation, incorrect software repeat settings, or contact oxide build-up. This guide provides step-by-step diagnostic procedures to fix your double-clicking keyboard quickly.</p>
+                <p>If you are in the middle of an intense gaming session or typing an email and press the **Shift key five times in a row**, a Windows popup will interrupt you with a high-pitched beep: *"Do you want to turn on Sticky Keys?"* This accessibility shortcut is designed to help users who cannot hold down multiple keys at once, but for gamers and fast typists, it is an annoying distraction. This guide shows you how to turn off Sticky Keys permanently on Windows 10 and Windows 11.</p>
 
-                <h2>What Causes Keyboard Double-Clicking (Chatter)?</h2>
-                <p>Keyboard chatter occurs when the physical contact points inside a switch bounce or vibrate excessively, sending multiple signals to the computer instead of a single keystroke. Common causes include:</p>
-                <ul>
-                    <li><strong>Debris and Dust:</strong> Tiny dust particles block the electrical contact points.</li>
-                    <li><strong>Oxidation:</strong> Humid environments cause oxide layers on copper contacts inside switches.</li>
-                    <li><strong>Switch Wear:</strong> Over time, mechanical springs lose tension and begin bouncing.</li>
-                    <li><strong>OS Configuration:</strong> Windows or Mac keyboard repeat delay settings configured too fast.</li>
-                </ul>
+                <h2>1. What Are Sticky Keys?</h2>
+                <p>Sticky Keys is a built-in accessibility feature in Windows. It allows modifier keys like **Shift**, **Ctrl**, **Alt**, or the **Windows Key** to remain active (stuck) after you press them once. For example, to type "Ctrl + C" on a keyboard with Sticky Keys active, you press Ctrl first, release it, and then press C. </p>
+                <p>While useful for certain physical accessibility needs, the default trigger (pressing Shift 5 times rapidly) is easily activated by accident in video games where Shift is used to run or crouch.</p>
 
-                <h2>Step 1: Check Windows Keyboard Repeat Settings</h2>
-                <p>Before pulling keycaps, rule out software settings. Sometimes, Windows key repeat properties trigger double letters because the repeat delay is too short.</p>
+                <h2>2. How to Turn Off Sticky Keys on Windows 11</h2>
+                <p>To disable both the feature and its keyboard shortcut trigger in Windows 11:</p>
                 <ol>
-                    <li>Press <strong>Windows Key + R</strong> to open the Run dialog.</li>
-                    <li>Type <code>control keyboard</code> and press Enter.</li>
-                    <li>In the Keyboard Properties window, locate the <strong>Repeat delay</strong> slider.</li>
-                    <li>Move the slider one notch closer to <strong>Long</strong>.</li>
-                    <li>Click <strong>Apply</strong> and test typing.</li>
-                </ol>
-
-                <div class="highlight-box">
-                    <p>Tip: Adjusting repeat settings is especially helpful for membrane keyboards, laptop keyboards, and older mechanical switches that are starting to show signs of mechanical fatigue.</p>
-                </div>
-
-                <h2>Step 2: Clean the Switch with Compressed Air</h2>
-                <p>Dust is the number one enemy of mechanical keyboard switches. If a single key (e.g., Spacebar or E) is double-clicking, try blowing out the debris:</p>
-                <ol>
-                    <li>Unplug your keyboard.</li>
-                    <li>Remove the keycap of the double-clicking key using a keycap puller.</li>
-                    <li>Press down the switch stem (the colored cross-shaped plunger) completely.</li>
-                    <li>Use a can of compressed air to blow directly into the gap between the stem and the switch housing.</li>
-                    <li>Release and press the switch stem rapidly 20 times to clear out any dislodged dust particles.</li>
-                </ol>
-
-                <h2>Step 3: Fix Mechanical Switch Oxidation (Isopropyl Alcohol Method)</h2>
-                <p>If compressed air fails, there may be microscopic oxidation on the internal copper contacts. High-purity isopropyl alcohol (IPA 90% or higher) is non-conductive and will clean the contact points inside the switch housing without damaging the electronics:</p>
-                <ol>
-                    <li>Disconnect the keyboard from the PC.</li>
-                    <li>Remove the keycap of the faulty key.</li>
-                    <li>Apply <strong>2 to 3 drops</strong> of 90%+ isopropyl alcohol directly onto the switch stem using a dropper or a small cotton swab.</li>
-                    <li>Rrepeatedly press the switch stem down for 30-40 seconds to allow the alcohol to seep inside and dissolve dirt or oxidation on the metal leaf.</li>
-                    <li>Wait 10-15 minutes for the alcohol to completely evaporate.</li>
-                    <li>Plug the keyboard back in and test.</li>
+                    <li>Press <strong>Windows Key + I</strong> to open Windows Settings.</li>
+                    <li>Select <strong>Accessibility</strong> from the left-hand sidebar menu.</li>
+                    <li>Scroll down and click on <strong>Keyboard</strong> under the Interaction section.</li>
+                    <li>Locate <strong>Sticky Keys</strong> and toggle the switch to <strong>Off</strong>.</li>
+                    <li>Click on the <strong>Sticky Keys</strong> row to expand the settings page.</li>
+                    <li>Toggle **"Keyboard shortcut for Sticky Keys"** to **Off**. This disables the "Shift 5 times" trigger permanently.</li>
+                    <li>Uncheck **"Show the Sticky Keys icon on the taskbar"** and **"Sound a sound when modifier keys are pressed"** to disable the warning beep.</li>
                 </ol>
 
                 <div class="article-cta">
-                    <h4>Diagnose Your Keystrokes in Real-Time</h4>
-                    <p>Once you complete the cleaning steps, use our zero-latency diagnostic console to verify if the key chatter or double-pressing has been fixed.</p>
-                    <a href="index.html" class="cta-btn">Test Keystrokes Now</a>
+                    <h4>Test Your Modifier Keys</h4>
+                    <p>Cleaned up your Windows settings? Open our diagnostic tool to test if your Shift, Ctrl, and Alt keys register and behave normally.</p>
+                    <a href="/" class="cta-btn">Test Keys Now</a>
                 </div>
 
-                <h2>Step 4: Use Keyboard Chatting Software Fixes</h2>
-                <p>If you have soldered mechanical switches and cannot replace the faulty switch easily, you can use software to filter out double keypresses. Free software utilities like <strong>Keyboard Chatter Blocker</strong> monitor typing speed and automatically ignore a second key press if it happens within a short window (e.g., under 40 milliseconds), saving you from hardware repairs.</p>
+                <h2>3. How to Turn Off Sticky Keys on Windows 10</h2>
+                <p>If you are using Windows 10, follow these steps:</p>
+                <ol>
+                    <li>Open the Start Menu and click the gear icon to open <strong>Settings</strong>.</li>
+                    <li>Click on <strong>Ease of Access</strong>.</li>
+                    <li>On the left sidebar, scroll down and click on <strong>Keyboard</strong>.</li>
+                    <li>Find **Use Sticky Keys** and toggle the switch to <strong>Off</strong>.</li>
+                    <li>Uncheck the box next to **"Allow the shortcut key to start Sticky Keys"** (this disables the five-time Shift key trigger).</li>
+                </ol>
+
+                <h2>4. The Control Panel Method (Alternative)</h2>
+                <p>If you prefer using the classic Windows Control Panel:</p>
+                <ol>
+                    <li>Open the Start Menu, type <code>control panel</code>, and press Enter.</li>
+                    <li>Go to <strong>Ease of Access</strong>, then click on <strong>Ease of Access Center</strong>.</li>
+                    <li>Click on <strong>Make the keyboard easier to use</strong>.</li>
+                    <li>Under the *Make it easier to type* section, click on <strong>Set up Sticky Keys</strong>.</li>
+                    <li>Uncheck the box that says <strong>Turn on Sticky Keys when SHIFT is pressed five times</strong>.</li>
+                    <li>Click <strong>Apply</strong> and then click <strong>OK</strong>.</li>
+                </ol>
             </article>
         </main>
 
@@ -286,7 +264,7 @@
                 <a href="privacy-policy" class="footer-link">Privacy Policy</a>
                 <a href="contact-us" class="footer-link">Contact Us</a>
             </div>
-            <p>KeyPulse &bull; Diagnostic Blog &bull; Developed by <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; Verified hardware fixes.</p>
+            <p>KeyPulse &bull; Diagnostic Blog &bull; Developed by <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; Windows keyboard configurations.</p>
         </footer>
     </div>
 
@@ -320,10 +298,6 @@
         function showModal(type) {
             modalContentArea.innerHTML = modalContents[type] || '';
             modalContainer.classList.add('active');
-        }
-
-        function closeModal() {
-            modalContainer.classList.remove('active');
         }
 
         // Attach event listeners for nav links
