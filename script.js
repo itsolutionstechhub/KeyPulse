@@ -575,8 +575,8 @@ const translations = {
             <p>At KeyPulse, we take user privacy very seriously. We operate a completely transparent web application with no silent background tracking.</p>
             <h3>1. Data Collection</h3>
             <p>KeyPulse operates entirely client-side. The keypress and mouse data analyzed during your testing session are processed instantly inside your web browser. <strong>We do not transmit, collect, or store any of your keystrokes or coordinates on remote web servers.</strong></p>
-            <h3>2. Third-Party Ads (Monetag)</h3>
-            <p>To keep this diagnostic tool 100% free for everyone, we display third-party advertisements using the Monetag ad network. Monetag may collect anonymous cookies and basic device identifiers to serve tailored ads to visitors. You can configure your browser cookie settings to reject tracking if preferred.</p>
+            <h3>2. Third-Party Advertising</h3>
+            <p>To keep this diagnostic tool 100% free for everyone, we display third-party advertisements using advertising networks (like Google AdSense). These networks may collect anonymous cookies and basic device identifiers to serve tailored ads to visitors. You can configure your browser cookie settings to reject tracking if preferred.</p>
             <h3>3. Channel Association</h3>
             <p>This software is developed in association with <a href="https://www.youtube.com/@itsolutionspro" target="_blank">IT Solutions Pro</a>. By using this website, you consent to our privacy guidelines.</p>
         `,
@@ -670,7 +670,7 @@ const translations = {
             <p>En KeyPulse, nos tomamos muy en serio la privacidad. Operamos una aplicación transparente sin seguimiento en segundo plano.</p>
             <h3>1. Recopilación de Datos</h3>
             <p>KeyPulse funciona completamente en el navegador del usuario. Los datos no se transmiten, recopilan ni almacenan en servidores web remotos.</p>
-            <h3>2. Anuncios de Terceros (Monetag)</h3>
+            <h3>2. Anuncios de Terceros</h3>
             <p>Para mantener esta herramienta gratuita, mostramos anuncios a través de Monetag. Monetag puede recopilar cookies anónimas para personalizar anuncios.</p>
             <h3>3. Asociación de Canal</h3>
             <p>Este software se desarrolla en asociación con <a href="https://www.youtube.com/@itsolutionspro" target="_blank">IT Solutions Pro</a>.</p>
@@ -761,7 +761,7 @@ const translations = {
                 <span>KeyPulse & IT Solutions Pro</span>
             </div>
             <p>Ihre Privatsphäre ist uns wichtig. KeyPulse läuft vollständig in Ihrem Browser; es werden keine Tastatureingaben oder Daten an Server übermittelt.</p>
-            <p>Wir nutzen Monetag-Werbung zur Finanzierung. Monetag kann anonyme Cookies für personalisierte Werbung erfassen.</p>
+            <p>Wir nutzen Werbe-Netzwerke zur Finanzierung. Diese Netzwerke kÃ¶nnen anonyme Cookies für personalisierte Werbung erfassen.</p>
         `,
         article: `
             <h2>Tastatur- und Mausdiagnose: Tastenlatenz und NKRO erklärt</h2>
@@ -937,7 +937,7 @@ const translations = {
                 <span>KeyPulse & IT Solutions Pro</span>
             </div>
             <p>O KeyPulse opera localmente no navegador. Nenhuma informação é transmitida ou salva em nossos servidores.</p>
-            <p>Para monetização, usamos a rede Monetag, que pode ler cookies anônimos para exibir anúncios segmentados.</p>
+            <p>Para monetização, usamos redes de anÃºncios, que podem ler cookies anônimos para exibir anúncios segmentados.</p>
         `,
         article: `
             <h2>Diagnóstico Definitivo de Teclado e Mouse: Latência de Teclas e NKRO Explicados</h2>
@@ -1409,19 +1409,27 @@ function applyLanguageTranslations(lang) {
     }
     
     // Footer Links
-    document.getElementById('link-about').textContent = t.footerAbout;
-    document.getElementById('link-privacy').textContent = t.footerPrivacy;
-    document.getElementById('link-contact').textContent = t.footerContact;
+    const linkAbout = document.getElementById('link-about');
+    if (linkAbout) linkAbout.textContent = t.footerAbout;
+    const linkPrivacy = document.getElementById('link-privacy');
+    if (linkPrivacy) linkPrivacy.textContent = t.footerPrivacy;
+    const linkContact = document.getElementById('link-contact');
+    if (linkContact) linkContact.textContent = t.footerContact;
     
-    document.getElementById('link-about-header').textContent = t.headerAbout;
-    document.getElementById('link-privacy-header').textContent = t.headerPrivacy;
-    document.getElementById('link-contact-header').textContent = t.headerContact;
+    const linkAboutHeader = document.getElementById('link-about-header');
+    if (linkAboutHeader) linkAboutHeader.textContent = t.headerAbout;
+    const linkPrivacyHeader = document.getElementById('link-privacy-header');
+    if (linkPrivacyHeader) linkPrivacyHeader.textContent = t.headerPrivacy;
+    const linkContactHeader = document.getElementById('link-contact-header');
+    if (linkContactHeader) linkContactHeader.textContent = t.headerContact;
     
     // Footer Brand Link preserving HTML
-    document.getElementById('footer-desc').innerHTML = `${t.footerDesc} <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; Zero-latency diagnostics.`;
+    const footerDesc = document.getElementById('footer-desc');
+    if (footerDesc) footerDesc.innerHTML = `${t.footerDesc} <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; Zero-latency diagnostics.`;
     
     // SEO Article
-    document.getElementById('seo-article').innerHTML = t.article;
+    const seoArticle = document.getElementById('seo-article');
+    if (seoArticle) seoArticle.innerHTML = t.article;
 }
 
 // Setup Event Listeners on UI controls
@@ -1483,6 +1491,8 @@ function initModalDiagnostics() {
     const modalClose = document.getElementById('modal-close');
     const modalContentArea = document.getElementById('modal-content-area');
     
+    if (!modalContainer || !modalClose || !modalContentArea) return;
+    
     const linkAbout = document.getElementById('link-about');
     const linkPrivacy = document.getElementById('link-privacy');
     const linkContact = document.getElementById('link-contact');
@@ -1508,33 +1518,39 @@ function initModalDiagnostics() {
         window.focus();
     }
     
-    linkAbout.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal('about');
-    });
-    if (linkAboutHeader) {
+    if (linkAbout && linkAbout.getAttribute('href') === '#') {
+        linkAbout.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('about');
+        });
+    }
+    if (linkAboutHeader && linkAboutHeader.getAttribute('href') === '#') {
         linkAboutHeader.addEventListener('click', (e) => {
             e.preventDefault();
             openModal('about');
         });
     }
     
-    linkPrivacy.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal('privacy');
-    });
-    if (linkPrivacyHeader) {
+    if (linkPrivacy && linkPrivacy.getAttribute('href') === '#') {
+        linkPrivacy.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('privacy');
+        });
+    }
+    if (linkPrivacyHeader && linkPrivacyHeader.getAttribute('href') === '#') {
         linkPrivacyHeader.addEventListener('click', (e) => {
             e.preventDefault();
             openModal('privacy');
         });
     }
     
-    linkContact.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal('contact');
-    });
-    if (linkContactHeader) {
+    if (linkContact && linkContact.getAttribute('href') === '#') {
+        linkContact.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('contact');
+        });
+    }
+    if (linkContactHeader && linkContactHeader.getAttribute('href') === '#') {
         linkContactHeader.addEventListener('click', (e) => {
             e.preventDefault();
             openModal('contact');
