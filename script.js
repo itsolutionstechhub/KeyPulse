@@ -1568,7 +1568,16 @@ function initModalDiagnostics() {
 
 // Start listeners and render initial keyboard
 window.addEventListener('DOMContentLoaded', () => {
-    applyLanguageTranslations('en'); // Default to English
+    // Parse language from URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    const supportedLangs = ['en', 'es', 'de', 'fr', 'pt'];
+    const defaultLang = (langParam && supportedLangs.includes(langParam)) ? langParam : 'en';
+
+    if (selectLang) {
+        selectLang.value = defaultLang;
+    }
+    applyLanguageTranslations(defaultLang);
     renderKeyboard('layout-80');
     initMouseTester();
     setupControlListeners();

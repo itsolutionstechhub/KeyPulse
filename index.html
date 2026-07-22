@@ -9,6 +9,33 @@
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
     <!-- Meta tags for SEO -->
     <meta name="google-site-verification" content="vofhFxDAIj9Q2VNXKJgiv6-A5TOReD46r1HDH79yFSU" />
+    <!-- Canonical URL & Language Fallback -->
+    <script>
+      (function() {
+        var link = document.createElement('link');
+        link.rel = 'canonical';
+        var params = new URLSearchParams(window.location.search);
+        var lang = params.get('lang');
+        var supported = ['en', 'es', 'de', 'fr', 'pt'];
+        if (lang && supported.indexOf(lang) !== -1) {
+          link.href = 'https://keypluse.online/?lang=' + lang;
+        } else {
+          link.href = 'https://keypluse.online/';
+        }
+        document.head.appendChild(link);
+      })();
+    </script>
+    <noscript>
+      <link rel="canonical" href="https://keypluse.online/">
+    </noscript>
+    
+    <!-- Hreflang Alternates for SEO -->
+    <link rel="alternate" hreflang="x-default" href="https://keypluse.online/" />
+    <link rel="alternate" hreflang="en" href="https://keypluse.online/" />
+    <link rel="alternate" hreflang="es" href="https://keypluse.online/?lang=es" />
+    <link rel="alternate" hreflang="de" href="https://keypluse.online/?lang=de" />
+    <link rel="alternate" hreflang="fr" href="https://keypluse.online/?lang=fr" />
+    <link rel="alternate" hreflang="pt" href="https://keypluse.online/?lang=pt" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2H5J7RQELY"></script>
     <script>
