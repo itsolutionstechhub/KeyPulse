@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" style="background: linear-gradient(135deg, #1e1b4b, #0f172a);">
+    <circle cx="100" cy="100" r="40" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4" />
+    <rect x="80" y="50" width="40" height="80" rx="20" fill="none" stroke="#fff" stroke-width="2" />
+    <circle cx="100" cy="90" r="4" fill="#ff0055" filter="drop-shadow(0 0 5px #ff0055)" />
+    <path d="M 100 90 L 150 40" stroke="#ff0055" stroke-width="1.5" stroke-dasharray="2" />
+</svg>

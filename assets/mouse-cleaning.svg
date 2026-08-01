@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" style="background: linear-gradient(135deg, #0f172a, #1e1b4b);">
+    <rect x="75" y="45" width="50" height="90" rx="25" fill="none" stroke="#fff" stroke-width="2.5" />
+    <line x1="100" y1="45" x2="100" y2="85" stroke="#fff" stroke-width="1.5" />
+    <path d="M 60 70 L 63 80 L 73 83 L 63 86 L 60 96 L 57 86 L 47 83 L 57 80 Z" fill="#00f0ff" />
+    <path d="M 140 110 L 142 117 L 149 119 L 142 121 L 140 128 L 138 121 L 131 119 L 138 117 Z" fill="#00f0ff" opacity="0.7" />
+</svg>

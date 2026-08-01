@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Keyboard Ghosting and Jamming - KeyPulse</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+    <!-- Google site verification -->
+    <meta name="google-site-verification" content="vofhFxDAIj9Q2VNXKJgiv6-A5TOReD46r1HDH79yFSU" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2H5J7RQELY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2H5J7RQELY');
+    </script>
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5133605677668807"
+     crossorigin="anonymous"></script>
+    <meta name="description" content="What is keyboard ghosting and key jamming? Learn how matrix layouts limit key combinations and why mechanical N-Key Rollover prevents ghosted keys.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .article-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .article-title {
+            font-size: 36px;
+            color: #fff;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        .article-content h2 {
+            font-size: 24px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        .article-content p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .article-content li {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        .article-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px dashed var(--accent);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .article-cta h4 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .article-cta p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .cta-btn {
+            background: var(--accent);
+            color: #0d0e15;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+        }
+        .cta-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+        }
+        .article-featured-image-wrapper {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .article-featured-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "What is Keyboard Ghosting and Jamming",
+      "description": "What is keyboard ghosting and key jamming? Learn how matrix layouts limit key combinations and why mechanical N-Key Rollover prevents ghosted keys.",
+      "author": {
+        "@type": "Person",
+        "name": "Dasith Premachandra",
+        "jobTitle": "Lead Hardware Diagnostic Engineer",
+        "sameAs": "https://www.youtube.com/@itsolutionspro"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "KeyPulse",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://keypluse.online/favicon.svg"
+        }
+      },
+      "datePublished": "2026-08-15",
+      "dateModified": "2026-08-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://keypluse.online/what-is-keyboard-ghosting-and-jamming"
+      }
+    }
+    </script></head>
+<body class="theme-neon-dark">
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="brand-wrapper">
+                <div class="brand">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                            <line x1="6" y1="8" x2="6.01" y2="8"></line>
+                            <line x1="10" y1="8" x2="10.01" y2="8"></line>
+                            <line x1="14" y1="8" x2="14.01" y2="8"></line>
+                            <line x1="18" y1="8" x2="18.01" y2="8"></line>
+                            <line x1="6" y1="12" x2="6.01" y2="12"></line>
+                            <line x1="10" y1="12" x2="10.01" y2="12"></line>
+                            <line x1="14" y1="12" x2="14.01" y2="12"></line>
+                            <line x1="18" y1="12" x2="18.01" y2="12"></line>
+                            <line x1="7" y1="16" x2="17" y2="16"></line>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>KeyPulse</h1>
+                        <span id="logo-tagline">Smart Diagnostic Console</span>
+                    </div>
+                </div>
+                <nav class="header-nav">
+                    <a href="/" class="header-link">Keyboard</a>
+                    <a href="cps-tester" class="header-link">CPS Tester</a>
+                    <a href="blog" class="header-link active">Blog</a>
+                    <a href="about-us" id="link-about-header" class="header-link">About</a>
+                    <a href="privacy-policy" id="link-privacy-header" class="header-link">Privacy</a>
+                    <a href="contact-us" id="link-contact-header" class="header-link">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Article Container -->
+        <main class="article-container">
+            <div class="article-meta">
+                <span>Published on August 15, 2026</span>
+                <span>&bull;</span>
+                <span>By KeyPulse Tech Labs</span>
+                <span>&bull;</span>
+                <span>5 Min Read</span>
+            </div>
+            <div class="eeat-factcheck-badge">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Fact-Checked &amp; Reviewed by IT Solutions Pro Labs</span>
+            </div>
+
+            <h1 class="article-title">What is Keyboard Ghosting and Jamming</h1>
+            
+            <div class="article-featured-image-wrapper">
+                <svg class="article-featured-image" viewBox="0 0 800 350" style="background: linear-gradient(135deg, #1e1b4b, #0f172a); width: 100%; height: 100%;">
+                    <!-- Key grid representing ghosting/jamming -->
+                    <!-- Key 1 (W) -->
+                    <rect x="250" y="80" width="70" height="70" rx="8" fill="none" stroke="#fff" stroke-width="2.5" />
+                    <text x="285" y="125" font-family="'Outfit', sans-serif" font-size="28" fill="#fff" font-weight="700" text-anchor="middle">W</text>
+                    <!-- Key 2 (A) -->
+                    <rect x="180" y="160" width="70" height="70" rx="8" fill="none" stroke="#fff" stroke-width="2.5" />
+                    <text x="215" y="205" font-family="'Outfit', sans-serif" font-size="28" fill="#fff" font-weight="700" text-anchor="middle">A</text>
+                    <!-- Key 3 (S) -->
+                    <rect x="260" y="160" width="70" height="70" rx="8" fill="none" stroke="#fff" stroke-width="2.5" />
+                    <text x="295" y="205" font-family="'Outfit', sans-serif" font-size="28" fill="#fff" font-weight="700" text-anchor="middle">S</text>
+                    <!-- Ghosted Key 4 (D) - Red/Glitching -->
+                    <rect x="340" y="160" width="70" height="70" rx="8" fill="none" stroke="#ff0055" stroke-width="2.5" stroke-dasharray="4 2" />
+                    <text x="375" y="205" font-family="'Outfit', sans-serif" font-size="28" fill="#ff0055" font-weight="700" text-anchor="middle" opacity="0.6">D</text>
+                    
+                    <path d="M 375 220 L 375 250" stroke="#ff0055" stroke-width="2" stroke-dasharray="2" />
+                    <text x="375" y="270" font-family="'Outfit', sans-serif" font-size="14" fill="#ff0055" text-anchor="middle">GHOSTED / BLOCKED</text>
+                    
+                    <!-- Title -->
+                    <text x="600" y="150" font-family="'Outfit', sans-serif" font-size="24" fill="#fff" font-weight="800" text-anchor="middle">KEYBOARD MATRIX</text>
+                    <text x="600" y="180" font-family="'Outfit', sans-serif" font-size="16" fill="#00f0ff" text-anchor="middle">Ghosting &amp; Jamming</text>
+                </svg>
+            </div>
+
+            <div class="article-content">
+                <p>Have you ever played a game, pressed three keys simultaneously (like W, A, and Shift), only for the fourth keypress to be completely ignored? Or worse, a key registers that you didn't even press? This phenomenon is known as **keyboard ghosting** and **key jamming**.</p>
+                <p>These issues are limitations of low-cost keyboard circuit designs. In this guide, we will analyze why ghosting occurs and how you can prevent it.</p>
+
+                <h2>1. The Keyboard Matrix Layout</h2>
+                <p>To reduce manufacturing costs and the number of copper traces required, standard office keyboards do not connect each switch to its own dedicated circuit wire. Instead, keys are wired in a grid of rows and columns called a **keyboard matrix**.</p>
+                <p>When you press a key, it connects a specific row and column wire. The keyboard micro-controller registers this intersection and sends the letter to your PC.</p>
+
+                <h2>2. Why Key Jamming Occurs</h2>
+                <p>When you press three keys that form three corners of a rectangle in the matrix grid, the micro-controller cannot distinguish between a completed circuit and a parasitic bypass current. To prevent sending incorrect letters, the controller locks up and ignores further keypresses. This is known as **key jamming**.</p>
+
+                <h2>3. What is Keyboard Ghosting?</h2>
+                <p>In older or low-quality controllers, pressing three keys in a matrix block can cause a fourth, unpressed key to actuate. This is called **ghosting** because a "ghost" key is registered. Modern keyboards prevent ghosting by blocking the keys (jamming them) instead.</p>
+
+                <h2>4. The Solution: N-Key Rollover (NKRO)</h2>
+                <p>The only complete solution to ghosting and jamming is purchasing a keyboard that supports **N-Key Rollover (NKRO)**. NKRO keyboards place a small electrical diode next to every single switch. This blocks current from flowing backwards through the matrix, allowing every key to register independently, regardless of how many keys are held down simultaneously.</p>
+
+                
+            <!-- E-E-A-T Author Box -->
+            <div class="eeat-author-box">
+                <div class="eeat-author-avatar-wrapper">
+                    <span>DP</span>
+                </div>
+                <div class="eeat-author-info">
+                    <div class="eeat-author-header">
+                        <span class="eeat-author-name">Dasith Premachandra</span>
+                        <span class="eeat-author-title">Senior Diagnostics Expert</span>
+                    </div>
+                    <p class="eeat-author-bio">Dasith is a veteran hardware engineer with over a decade of experience diagnosing input latency, switch chatter, and mechanical failure trends. As the lead designer at IT Solutions Pro, he calibrates peripheral diagnostic utilities that help competitive gamers achieve zero-latency performance.</p>
+                </div>
+            </div><div class="article-cta">
+                    <h4>Test Keyboard Ghosting &amp; Rollover</h4>
+                    <p>Hold down multiple keys at once on our interactive grid to check if your keyboard suffers from ghosting or jamming.</p>
+                    <a href="/" class="cta-btn">Run Rollover Test</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-links">
+                <a href="about-us" id="link-about" class="footer-link">About Us</a>
+                <a href="privacy-policy" id="link-privacy" class="footer-link">Privacy Policy</a>
+                <a href="contact-us" id="link-contact" class="footer-link">Contact Us</a>
+                <a href="terms-and-conditions" class="footer-link">Terms &amp; Conditions</a>
+                <a href="disclaimer" class="footer-link">Disclaimer</a>
+            </div>
+            <p>KeyPulse &bull; Diagnostic Blog &bull; Developed by <a href="https://www.youtube.com/@itsolutionspro" target="_blank" class="footer-brand-link">IT Solutions Pro</a> &bull; All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
